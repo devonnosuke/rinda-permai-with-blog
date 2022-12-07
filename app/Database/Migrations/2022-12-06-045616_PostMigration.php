@@ -54,7 +54,7 @@ class PostMigration extends Migration
                 'type'           => 'INT',
                 'constraint'     => 11,
             ],
-            'id_views' => [
+            'post_views' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
             ],
