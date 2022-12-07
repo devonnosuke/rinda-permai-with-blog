@@ -1,4 +1,4 @@
-◘<?php
+<?php
 
     namespace App\Database\Seeds;
 
@@ -22,6 +22,3 @@
             }
         }
     }
-
-
-    ?>
