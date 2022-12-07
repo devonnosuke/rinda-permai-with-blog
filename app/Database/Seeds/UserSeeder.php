@@ -13,7 +13,6 @@ class UserSeeder extends Seeder
             $data = [
                 'username'      => "$i-Ryanch",
                 'password'      => "ryanch",
-                'email'         => "$i-Ryanch@gmail.com",
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s'),
             ];
