@@ -12,7 +12,8 @@ class ContactSeeder extends Seeder
             $data = [
                 'email'            => "$i-Ryanch@gmail.com",
                 'phone'            => "088888888888",
-                'name_residence'   =>  "$i-Residence",
+                'name_residence'   => "$i-Residence",
+                'address'          => "$i-address",
                 'created_at'       => date('Y-m-d H:i:s'),
                 'updated_at'       => date('Y-m-d H:i:s'),
             ];

@@ -11,11 +11,11 @@ class CommentSeeder extends Seeder
         for ($i = 0; $i < 6; $i++) {
             $data = [
                 'comment_date' => date('Y-m-d H:i:s'),
-                'email' => "email_$i",
-                'message' => "lorem ipsum",
-                'status' => rand(1, 99),
+                'email' => "$i.email@gmail.com",
+                'message' => "lorem ipsum dolor sit amet",
+                'status' => rand(0, 1),
                 'comment_parent' => rand(1, 99),
-                'id_post' => rand(1, 99),
+                'id_post' => getRandId('post', 'id_post'),
                 'image' => "image_$i",
                 'updated_at' => date('Y-m-d H:i:s'),
             ];

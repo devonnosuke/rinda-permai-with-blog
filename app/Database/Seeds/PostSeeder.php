@@ -11,17 +11,17 @@ class PostSeeder extends Seeder
         for ($i = 0; $i < 6; $i++) {
 
             $data = [
-                'title'             => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, dolore!",
+                'title'             => "$i-Lorem Ipsum Dolor Sit Amet",
                 'description'       => "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis, illum nesciunt? Quas at illum minus.",
                 'content'           => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, tenetur.",
                 'image'             => "$i-Image",
                 'post_date'         => date('Y-m-d H:i:s'),
                 'post_last_update'  => date('Y-m-d H:i:s'),
                 'id_category'       => getRandId('category', 'id_category'),
-                'post_tags'         => "Lorem ipsum dolor sit amet.",
-                'post_slug'         => "Lorem ipsum dolor sit amet.",
-                'post_status'       => rand(1, 99),
-                'post_views'        => rand(1, 99),
+                'post_tags'         => "Tags-$i",
+                'post_slug'         => "$i-lorem-ipsum-dolor-sit-amet",
+                'post_status'       => rand(0, 1),
+                'post_views'        => rand(1, 999),
                 'id_user'           => getRandId('user', 'id_user'),
             ];
 

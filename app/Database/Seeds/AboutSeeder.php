@@ -11,12 +11,12 @@ class AboutSeeder extends Seeder
         for ($i = 0; $i < 6; $i++) {
             $data = [
                 'title'         => "$i-Ryanch",
-                'subtitle'      => "$i-Ryanch@gmail.com",
-                'description'   =>  rand(1, 99),
-                'visi'          => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                'misi'          => "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                'img_thumb'     => "$i-img-thumb",
-                'img_profile'   => "$i-img-profile",
+                'subtitle'      => "$i-Ryanch Dolor Sit Amet",
+                'description'   => "$i-Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                'visi'          => "$i-Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                'misi'          => "$i-Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                'img_thumb'     => "$i-img-thumb.png",
+                'img_profile'   => "$i-img-profile.png",
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s'),
             ];
