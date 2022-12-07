@@ -22,6 +22,14 @@ class UserMigration extends Migration
             'password' => [
                 'type' => 'TEXT',
             ],
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
         ]);
         $this->forge->addKey('id_user', true);
         $this->forge->createTable('user');
