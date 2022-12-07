@@ -26,8 +26,8 @@ class PropertySeeder extends Seeder
                 'img_card'    => "img_card_$i",
                 'img_spec1'    => "img_spec_$i",
                 'img_spec2'    => "img_spec2_$i",
-                'id_property_spec'    => rand(1, 99),
-                'id_property_gallery'    => rand(1, 99),
+                'id_property_spec'    => getRandId('property', 'id_property_spec'),
+                'id_property_gallery'    => getRandId('property', 'id_property_gallery'),
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s'),
             ];
