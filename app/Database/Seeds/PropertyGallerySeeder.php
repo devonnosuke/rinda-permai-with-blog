@@ -8,6 +8,7 @@ class PropertyGallerySeeder extends Seeder
 {
     public function run()
     {
+        helper('getid');
         for ($i = 0; $i < 6; $i++) {
             $data = [
                 'id_property'   => getRandId('property', 'id_property'),

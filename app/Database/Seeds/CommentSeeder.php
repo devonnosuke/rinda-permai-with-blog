@@ -8,6 +8,7 @@ class CommentSeeder extends Seeder
 {
     public function run()
     {
+        helper('getid');
         for ($i = 0; $i < 6; $i++) {
             $data = [
                 'comment_date' => date('Y-m-d H:i:s'),
