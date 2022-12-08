@@ -57,6 +57,8 @@ $routes->get('/property', 'PropertyController::index');
 // ===============astrid punya==============
 // tabel about
 $routes->get('/about', 'AboutController::index');
+// tabel contact
+$routes->get('/contact', 'ContactController::index');
 
 // =============== Auliyaasariiii
 $routes->get('/post', 'PostController::index');
