@@ -33,7 +33,7 @@ class PublicFacilityGalleryMigration extends Migration
             ],
         ]);
         $this->forge->addKey('id_public_facility_gallery', true);
-        $this->forge->createTable('public_facility_gellery');
+        $this->forge->createTable('public_facility_gallery');
     }
 
     public function down()
