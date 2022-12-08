@@ -64,7 +64,8 @@ $routes->get('/post', 'PostController::index');
 // =============== Mauliani
 $routes->get('/property-spec', 'PropertySpecController::index');
 
-
+//================Joses==================
+$routes->get('/public-facility', 'PublicFacilityController::index');
 
 
 
