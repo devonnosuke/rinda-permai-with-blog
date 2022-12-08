@@ -38,9 +38,32 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
 
+
 // == Tia punya ==
 $routes->get('/tags', 'TagsController::index');
 $routes->get('/comment', 'CommentController::index');
+
+// ===============Mauliana punya==============
+// tabel category
+$routes->get('/category', 'CategoryController::index');
+
+// tabel social link
+$routes->get('/sociallink', 'SocialLinkController::index');
+
+
+//=========Aldi Punya==================
+$routes->get('/property', 'PropertyController::index');
+
+// ===============astrid punya==============
+// tabel about
+$routes->get('/about', 'AboutController::index');
+
+// =============== Auliyaasariiii
+$routes->get('/post', 'PostController::index');
+
+
+
+
 
 /*
  * --------------------------------------------------------------------

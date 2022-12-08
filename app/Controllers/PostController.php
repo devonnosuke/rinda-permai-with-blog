@@ -9,15 +9,15 @@ class PostController extends BaseController
     public function index()
     {
         $model = new \App\Models\PostModel();
-        $data['title'] = 'Student List 📃';
+        $data['title'] = 'Daftar Post';
 
         $search = $this->request->getVar('search');
         if ($search) {
-            $data['students'] = $model->searching($search);
+            $data['post'] = $model->searching($search);
         } else {
-            $data['students'] = $model->findAll();
+            $data['post'] = $model->findAll();
         }
 
-        return view('studentList', $data);
+        return view('admin/PostView', $data);
     }
 }

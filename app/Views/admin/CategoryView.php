@@ -4,27 +4,19 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Data Post</h1>
+    <h1 class="h3 mb-2 text-gray-800">Data Category</h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Post</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Daftar Category</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Content</th>
-                            <th>Image</th>
-                            <th>Id_Category</th>
-                            <th>Post_Tags</th>
-                            <th>Post_Slug</th>
-                            <th>Post_Status</th>
-                            <th>Post_Views</th>
-                            <th>Id_User</th>
+                            <th>Category name</th>
+                            <th>Category slug</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
