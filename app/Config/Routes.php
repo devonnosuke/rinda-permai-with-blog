@@ -49,6 +49,9 @@ $routes->get('/sociallink', 'SocialLinkController::index');
 //=========Aldi Punya==================
 $routes->get('/property', 'PropertyController::index');
 
+// ===============astrid punya==============
+// tabel about
+$routes->get('/about', 'AboutController::index');
 
 
 
