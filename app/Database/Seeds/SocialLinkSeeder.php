@@ -18,7 +18,7 @@ class SocialLinkSeeder extends Seeder
             ];
 
             // using query builder
-            $this->db->table('social_link')->insert($data);
+            $this->db->table('sociallink')->insert($data);
         }
     }
 }
