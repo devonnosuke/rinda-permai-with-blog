@@ -61,6 +61,9 @@ $routes->get('/about', 'AboutController::index');
 // =============== Auliyaasariiii
 $routes->get('/post', 'PostController::index');
 
+// =============== Mauliani
+$routes->get('/property-spec', 'PropertySpecController::index');
+
 
 
 
