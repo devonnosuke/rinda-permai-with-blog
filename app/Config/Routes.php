@@ -38,6 +38,13 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
 
+// ===============Mauliana punya
+// tabel category
+$routes->get('/category', 'CategoryController::index');
+
+// tabel social link
+$routes->get('/sociallink', 'SocialLinkController::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
