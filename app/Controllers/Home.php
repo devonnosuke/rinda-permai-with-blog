@@ -11,4 +11,10 @@ class Home extends BaseController
         $data['validation'] = Services::validation();
         return view('sample', $data);
     }
+
+    public function add()
+    {
+        $data['validation'] = Services::validation();
+        return view('form-sample', $data);
+    }
 }
