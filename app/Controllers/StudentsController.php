@@ -10,16 +10,16 @@ class StudentsController extends BaseController
     public function index()
     {
         $model = new \App\Models\StudentModel();
-        $data['title'] = 'Student List 📃';
+        $data['title'] = 'Daftar [namaTabel] 📃';
 
         $search = $this->request->getVar('search');
         if ($search) {
-            $data['students'] = $model->searching($search);
+            $data['namaTabel'] = $model->searching($search);
         } else {
-            $data['students'] = $model->findAll();
+            $data['namaTabel'] = $model->findAll();
         }
 
-        return view('studentList', $data);
+        return view('namaTabelView', $data);
     }
 
     public function add()
