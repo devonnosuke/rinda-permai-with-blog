@@ -53,6 +53,10 @@ $routes->get('/property', 'PropertyController::index');
 // tabel about
 $routes->get('/about', 'AboutController::index');
 
+// =============== Auliyaasariiii
+$routes->get('/post', 'PostController::index');
+
+
 
 
 
