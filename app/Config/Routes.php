@@ -38,6 +38,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
 
+// == Tia punya ==
+$routes->get('/tags', 'TagsController::index');
+$routes->get('/comment', 'CommentController::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

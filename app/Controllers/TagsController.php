@@ -8,16 +8,16 @@ class TagsController extends BaseController
 {
     public function index()
     {
-        $model = new \App\Models\StudentModel();
-        $data['title'] = 'Student List 📃';
+        $model = new \App\Models\TagsModel();
+        $data['title'] = 'Daftar Tags📃';
 
         $search = $this->request->getVar('search');
         if ($search) {
-            $data['students'] = $model->searching($search);
+            $data['tags'] = $model->searching($search);
         } else {
-            $data['students'] = $model->findAll();
+            $data['tags'] = $model->findAll();
         }
 
-        return view('studentList', $data);
+        return view('admin/TagsView', $data);
     }
 }
