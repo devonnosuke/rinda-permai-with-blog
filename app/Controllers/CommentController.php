@@ -8,7 +8,7 @@ class CommentController extends BaseController
 {
     public function index()
     {
-        $model = new \App\Models\TagsModel();
+        $model = new \App\Models\CommentModel();
         $data['title'] = 'Daftar Comment📃';
 
         $search = $this->request->getVar('search');

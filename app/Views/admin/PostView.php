@@ -15,6 +15,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
+
                         <tr>
                             <th>No</th>
                             <th>Title</th>
@@ -29,9 +30,10 @@
                             <th>Id_User</th>
                             <th class="text-center">Opsi</th>
                         </tr>
+
                     </thead>
                     <tbody>
-                        <?= $no = 1; ?>
+                        <?php $no = 1; ?>
                         <?php foreach ($post as $post) : ?> <tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= $post['title']; ?></td>
