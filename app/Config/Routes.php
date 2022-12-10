@@ -37,6 +37,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
+//routes login
+$routes->get('/', 'Home::index');
+$routes->post('/login', 'Login::index');
+$routes->get('/user', 'User::index', ['filter' => 'UserMemberFilter']);
+$routes->get('/login', 'Login::index', ['filter' => 'UserTamuFilter']);
+$routes->get('/user/logout', 'User::logout');
 
 
 // == Tia punya ==
