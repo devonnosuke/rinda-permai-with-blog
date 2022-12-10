@@ -5,6 +5,7 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data About</h1>
+    <?php d($About) ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -15,75 +16,44 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Picture</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
+                            <td>No</td>
+                            <th>title</th>
+                            <th>subtitle</th>
+                            <th>description</th>
+                            <th>visi</th>
+                            <th>misi</th>
+                            <th>img_thumb</th>
+                            <th>img_profile</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Michael Bruce</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>Singapore</td>
-                            <td>29</td>
-                            <td>2011/06/27</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
+                        <?= $no = 1; ?>
+                        <?php foreach ($About as $About) : ?>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $About['title']; ?></td>
+                                <td><?= $About['subtitle']; ?></td>
+                                <td><?= $About['description']; ?></td>
+                                <td><?= $About['visi']; ?></td>
+                                <td><?= $About['misi']; ?></td>
+                                <td>
+                                    <img src="<?php base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                </td>
+                                <td><img src="<?php base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" /></td>
+                                <td class="text-center">
+                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                        <button class="btn btn-danger ms-2 btn-circle">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <input type="hidden" name="_method" value="DELETE" />
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
