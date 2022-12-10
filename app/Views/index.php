@@ -24,6 +24,7 @@
 </head>
 
 <body id="page-top">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
