@@ -3,6 +3,7 @@
 namespace Config;
 
 use App\Filters\UserMemberFilter;
+use App\Filters\UserTamuFilter;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
