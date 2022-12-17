@@ -2,6 +2,8 @@
 
 namespace Config;
 
+helper('tagsRoutes');
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -37,6 +39,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
+$routes->get('/about', 'Home::about');
 //routes login
 $routes->get('/', 'Home::index');
 $routes->post('/login', 'Login::index');
@@ -44,103 +47,94 @@ $routes->get('/user', 'User::index', ['filter' => 'UserMemberFilter']);
 $routes->get('/login', 'Login::index', ['filter' => 'UserTamuFilter']);
 $routes->get('/user/logout', 'User::logout');
 
-
-// == Tia punya ==
-// tabel tags
-$routes->get('/tags', 'TagsController::index');
-$routes->get('/tags/tambah', 'TagsController::add');
-$routes->get('/tags/edit/(:num)', 'TagsController::edit/$1');
-$routes->post('/tags/save', 'TagsController::save');
-$routes->post('/tags/save/(:num)', 'TagsController::save/$1');
-$routes->post('/tags/save/(:num)/(:segment)', 'TagsController::save/$1/$2');
-$routes->delete('/tags/delete/(:num)', 'TagsController::delete/$1');
+tagsRoutes($routes);
 
 // tabel comment
-$routes->get('/comment', 'CommentController::index');
-$routes->get('/comment/tambah', 'CommentController::add');
-$routes->get('/comment/edit/(:num)', 'CommentController::edit/$1');
-$routes->post('/comment/save', 'CommentController::save');
-$routes->post('/comment/save/(:num)', 'CommentController::save/$1');
-$routes->post('/comment/save/(:num)/(:segment)', 'CommentController::save/$1/$2');
-$routes->delete('/comment/delete/(:num)', 'CommentController::delete/$1');
+$routes->get('/admin/comment', 'CommentController::index');
+$routes->get('/admin/comment/tambah', 'CommentController::add');
+$routes->get('/admin/comment/edit/(:num)', 'CommentController::edit/$1');
+$routes->post('/admin/comment/save', 'CommentController::save');
+$routes->post('/admin/comment/save/(:num)', 'CommentController::save/$1');
+$routes->post('/admin/comment/save/(:num)/(:segment)', 'CommentController::save/$1/$2');
+$routes->delete('/admin/comment/delete/(:num)', 'CommentController::delete/$1');
 
 // =============== Mauliana punya==============
 // tabel category
-$routes->get('/category', 'CategoryController::index');
-$routes->get('/category/tambah', 'CategoryController::add');
-$routes->get('/category/edit/(:num)', 'CategoryController::edit/$1');
-$routes->post('/category/save', 'CategoryController::save');
-$routes->post('/category/save/(:num)', 'CategoryController::save/$1');
-$routes->post('/category/save/(:num)/(:segment)', 'CategoryController::save/$1/$2');
-$routes->delete('/category/delete/(:num)', 'CategoryController::delete/$1');
+$routes->get('/admin/category', 'CategoryController::index');
+$routes->get('/admin/category/tambah', 'CategoryController::add');
+$routes->get('/admin/category/edit/(:num)', 'CategoryController::edit/$1');
+$routes->post('/admin/category/save', 'CategoryController::save');
+$routes->post('/admin/category/save/(:num)', 'CategoryController::save/$1');
+$routes->post('/admin/category/save/(:num)/(:segment)', 'CategoryController::save/$1/$2');
+$routes->delete('/admin/category/delete/(:num)', 'CategoryController::delete/$1');
 
 // tabel social link
-$routes->get('/sociallink', 'SocialLinkController::index');
-$routes->get('/sociallink/tambah', 'SocialLinkController::add');
-$routes->get('/sociallink/edit/(:num)', 'SocialLinkController::edit/$1');
-$routes->post('/sociallink/save', 'SocialLinkController::save');
-$routes->post('/sociallink/save/(:num)', 'SocialLinkController::save/$1');
-$routes->post('/sociallink/save/(:num)/(:segment)', 'SocialLinkController::save/$1/$2');
-$routes->delete('/sociallink/delete/(:num)', 'SocialLinkController::delete/$1');
+$routes->get('/admin/sociallink', 'SocialLinkController::index');
+$routes->get('/admin/sociallink/tambah', 'SocialLinkController::add');
+$routes->get('/admin/sociallink/edit/(:num)', 'SocialLinkController::edit/$1');
+$routes->post('/admin/sociallink/save', 'SocialLinkController::save');
+$routes->post('/admin/sociallink/save/(:num)', 'SocialLinkController::save/$1');
+$routes->post('/admin/sociallink/save/(:num)/(:segment)', 'SocialLinkController::save/$1/$2');
+$routes->delete('/admin/sociallink/delete/(:num)', 'SocialLinkController::delete/$1');
 
 
 //=========Aldi Punya==================
 // tabel property
-$routes->get('/property', 'PropertyController::index');
-$routes->get('/property/tambah', 'PropertyController::add');
-$routes->get('/property/edit/(:num)', 'PropertyController::edit/$1');
-$routes->post('/property/save', 'PropertyController::save');
-$routes->post('/property/save/(:num)', 'PropertyController::save/$1');
-$routes->post('/property/save/(:num)/(:segment)', 'PropertyController::save/$1/$2');
-$routes->delete('/property/delete/(:num)', 'PropertyController::delete/$1');
+$routes->get('/admin/property', 'PropertyController::index');
+$routes->get('/admin/property/tambah', 'PropertyController::add');
+$routes->get('/admin/property/edit/(:num)', 'PropertyController::edit/$1');
+$routes->post('/admin/property/save', 'PropertyController::save');
+$routes->post('/admin/property/save/(:num)', 'PropertyController::save/$1');
+$routes->post('/admin/property/save/(:num)/(:segment)', 'PropertyController::save/$1/$2');
+$routes->delete('/admin/property/delete/(:num)', 'PropertyController::delete/$1');
 
 // ===============astrid punya==============
 // tabel about
-$routes->get('/about', 'AboutController::index');
-$routes->get('/about/tambah', 'AboutController::add');
-$routes->get('/about/edit/(:num)', 'AboutController::edit/$1');
-$routes->post('/about/save', 'AboutController::save');
-$routes->post('/about/save/(:num)', 'AboutController::save/$1');
-$routes->post('/about/save/(:num)/(:segment)', 'AboutController::save/$1/$2');
-$routes->delete('/about/delete/(:num)', 'AboutController::delete/$1');
+$routes->get('/admin/about', 'AboutController::index');
+$routes->get('/admin/about/tambah', 'AboutController::add');
+$routes->get('/admin/about/edit/(:num)', 'AboutController::edit/$1');
+$routes->post('/admin/about/save', 'AboutController::save');
+$routes->post('/admin/about/save/(:num)', 'AboutController::save/$1');
+$routes->post('/admin/about/save/(:num)/(:segment)', 'AboutController::save/$1/$2');
+$routes->delete('/admin/about/delete/(:num)', 'AboutController::delete/$1');
 // tabel contact
-$routes->get('/contact', 'ContactController::index');
-$routes->get('/contact/tambah', 'ContactController::add');
-$routes->get('/contact/edit/(:num)', 'ContactController::edit/$1');
-$routes->post('/contact/save', 'ContactController::save');
-$routes->post('/contact/save/(:num)', 'ContactController::save/$1');
-$routes->post('/contact/save/(:num)/(:segment)', 'ContactController::save/$1/$2');
-$routes->delete('/contact/delete/(:num)', 'ContactController::delete/$1');
+$routes->get('/admin/contact', 'ContactController::index');
+$routes->get('/admin/contact/tambah', 'ContactController::add');
+$routes->get('/admin/contact/edit/(:num)', 'ContactController::edit/$1');
+$routes->post('/admin/contact/save', 'ContactController::save');
+$routes->post('/admin/contact/save/(:num)', 'ContactController::save/$1');
+$routes->post('/admin/contact/save/(:num)/(:segment)', 'ContactController::save/$1/$2');
+$routes->delete('/admin/contact/delete/(:num)', 'ContactController::delete/$1');
 
 // =============== Auliyaasariiii
 // tabel post
-$routes->get('/post', 'PostController::index');
-$routes->get('/post/tambah', 'PostController::add');
-$routes->get('/post/edit/(:num)', 'PostController::edit/$1');
-$routes->post('/post/save', 'PostController::save');
-$routes->post('/post/save/(:num)', 'PostController::save/$1');
-$routes->post('/post/save/(:num)/(:segment)', 'PostController::save/$1/$2');
-$routes->delete('/post/delete/(:num)', 'PostController::delete/$1');
+$routes->get('/admin/post', 'PostController::index');
+$routes->get('/admin/post/tambah', 'PostController::add');
+$routes->get('/admin/post/edit/(:num)', 'PostController::edit/$1');
+$routes->post('/admin/post/save', 'PostController::save');
+$routes->post('/admin/post/save/(:num)', 'PostController::save/$1');
+$routes->post('/admin/post/save/(:num)/(:segment)', 'PostController::save/$1/$2');
+$routes->delete('/admin/post/delete/(:num)', 'PostController::delete/$1');
 
 // =============== Mauliani
 // tabel property spec
-$routes->get('/property-spec', 'PropertySpecController::index');
-$routes->get('/property-spec/tambah', 'PropertySpecController::add');
-$routes->get('/property-spec/edit/(:num)', 'PropertySpecController::edit/$1');
-$routes->post('/property-spec/save', 'PropertySpecController::save');
-$routes->post('/property-spec/save/(:num)', 'PropertySpecController::save/$1');
-$routes->post('/property-spec/save/(:num)/(:segment)', 'PropertySpecController::save/$1/$2');
-$routes->delete('/property-spec/delete/(:num)', 'PropertySpecController::delete/$1');
+$routes->get('/admin/property-spec', 'PropertySpecController::index');
+$routes->get('/admin/property-spec/tambah', 'PropertySpecController::add');
+$routes->get('/admin/property-spec/edit/(:num)', 'PropertySpecController::edit/$1');
+$routes->post('/admin/property-spec/save', 'PropertySpecController::save');
+$routes->post('/admin/property-spec/save/(:num)', 'PropertySpecController::save/$1');
+$routes->post('/admin/property-spec/save/(:num)/(:segment)', 'PropertySpecController::save/$1/$2');
+$routes->delete('/admin/property-spec/delete/(:num)', 'PropertySpecController::delete/$1');
 
 //================Joses==================
 // tabel property public facility
-$routes->get('/public-facility', 'PublicFacilityController::index');
-$routes->get('/public-facility/tambah', 'PublicFacilityController::add');
-$routes->get('/public-facility/edit/(:num)', 'PublicFacilityController::edit/$1');
-$routes->post('/public-facility/save', 'PublicFacilityController::save');
-$routes->post('/public-facility/save/(:num)', 'PublicFacilityController::save/$1');
-$routes->post('/public-facility/save/(:num)/(:segment)', 'PublicFacilityController::save/$1/$2');
-$routes->delete('/public-facility/delete/(:num)', 'PublicFacilityController::delete/$1');
+$routes->get('/admin/public-facility', 'PublicFacilityController::index');
+$routes->get('/admin/public-facility/tambah', 'PublicFacilityController::add');
+$routes->get('/admin/public-facility/edit/(:num)', 'PublicFacilityController::edit/$1');
+$routes->post('/admin/public-facility/save', 'PublicFacilityController::save');
+$routes->post('/admin/public-facility/save/(:num)', 'PublicFacilityController::save/$1');
+$routes->post('/admin/public-facility/save/(:num)/(:segment)', 'PublicFacilityController::save/$1/$2');
+$routes->delete('/admin/public-facility/delete/(:num)', 'PublicFacilityController::delete/$1');
 
 
 

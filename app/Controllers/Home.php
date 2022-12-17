@@ -8,8 +8,14 @@ class Home extends BaseController
 {
     public function index()
     {
-        $data['validation'] = Services::validation();
-        return view('index', $data);
+        $data['title'] = 'Home';
+        return view('home/home', $data);
+    }
+
+    public function about()
+    {
+        $data['title'] = 'About';
+        return view('home/about', $data);
     }
 
     public function add()
