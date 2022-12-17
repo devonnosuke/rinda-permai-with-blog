@@ -15,6 +15,10 @@ class PropertyGalleryMigration extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'id_property' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+            ],
             'image' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',

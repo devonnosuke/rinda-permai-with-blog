@@ -11,7 +11,8 @@ class PropertyGallerySeeder extends Seeder
         helper('getid');
         for ($i = 0; $i < 6; $i++) {
             $data = [
-                'image'        => "$i-Image.png",
+                'id_property'        => getRandId('property', 'id_property'),
+                'image'        => "coming-soon.jpg",
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s')
 

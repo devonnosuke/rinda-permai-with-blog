@@ -15,6 +15,10 @@ class PropertySpecMigration extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'id_property' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+            ],
             'specification' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',

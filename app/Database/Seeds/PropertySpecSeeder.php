@@ -11,10 +11,10 @@ class PropertySpecSeeder extends Seeder
         helper('getid');
         for ($i = 0; $i < 6; $i++) {
             $data = [
-                'specification'   => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, atque.",
+                'id_property'        => getRandId('property', 'id_property'),
+                'specification'   => "$i, Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, atque.",
                 'created_at'      => date('Y-m-d H:i:s'),
                 'updated_at'      => date('Y-m-d H:i:s')
-
             ];
 
             // using query builder

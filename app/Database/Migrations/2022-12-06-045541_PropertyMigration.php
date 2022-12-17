@@ -75,14 +75,6 @@ class PropertyMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'id_property_spec' => [
-                'type' => 'INT',
-                'constraint' => '5',
-            ],
-            'id_property_gallery' => [
-                'type' => 'INT',
-                'constraint' => '5',
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
