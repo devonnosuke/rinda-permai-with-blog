@@ -15,7 +15,7 @@ class CommentSeeder extends Seeder
                 'email' => "$i.email@gmail.com",
                 'message' => "lorem ipsum dolor sit amet",
                 'status' => rand(0, 1),
-                'comment_parent' => rand(1, 99),
+                'comment_parent' => 0,
                 'id_post' => getRandId('post', 'id_post'),
                 'image' => "image_$i",
                 'updated_at' => date('Y-m-d H:i:s'),
