@@ -18,6 +18,12 @@ class Home extends BaseController
         return view('home/about', $data);
     }
 
+    public function blog()
+    {
+        $data['title'] = 'Blog';
+        return view('home/blog', $data);
+    }
+
     public function add()
     {
         $data['validation'] = Services::validation();
