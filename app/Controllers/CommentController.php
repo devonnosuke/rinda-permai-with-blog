@@ -15,7 +15,7 @@ class CommentController extends BaseController
         if ($search) {
             $data['comment'] = $model->searching($search);
         } else {
-            $data['comment'] = $model->findAll();
+            $data['comment'] = $model->getComment();
         }
 
         return view('admin/CommentView', $data);

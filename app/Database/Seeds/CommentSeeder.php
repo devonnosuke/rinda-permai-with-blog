@@ -17,7 +17,7 @@ class CommentSeeder extends Seeder
                 'status' => rand(0, 1),
                 'comment_parent' => 0,
                 'id_post' => getRandId('post', 'id_post'),
-                'image' => "image_$i",
+                'image' => "coming-soon.jpg",
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
 

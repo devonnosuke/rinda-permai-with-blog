@@ -13,4 +13,10 @@ function getRandId($tableName, $idName)
 
     $k = array_rand($data);
     return $data[$k];
+};
+
+function formatTanggal($date)
+{
+    // ubha string menjadi format tanggal
+    return date(' D, d F Y', strtotime($date));
 }

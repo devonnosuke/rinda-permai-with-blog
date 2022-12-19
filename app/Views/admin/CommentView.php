@@ -16,28 +16,33 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>no</th>
-                            <th>email</th>
-                            <th>message</th>
-                            <th>status</th>
-                            <th>comment_parent</th>
-                            <th>id_post</th>
-                            <th>image</th>
+                            <th>No</th>
+                            <th>Comment Date</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Post Slug</th>
+                            <th class="text-center">Image</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1; ?>
                         <?php foreach ($comment as $comment) : ?>
+                            <?php if ($comment['status'] == 0) {
+                                $status =  'tidak aktif';
+                            } else {
+                                $status = 'aktif';
+                            } ?>
                             <tr>
                                 <td><?= $no++; ?></td>
+                                <td><?= formatTanggal($comment['comment_date']); ?></td>
                                 <td><?= $comment['email']; ?></td>
                                 <td><?= $comment['message']; ?></td>
-                                <td><?= $comment['status']; ?></td>
-                                <td><?= $comment['comment_parent']; ?></td>
-                                <td><?= $comment['id_post']; ?></td>
+                                <td><?= $status ?></td>
+                                <td><?= $comment['post_slug']; ?></td>
                                 <td class="text-center">
-                                    <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                    <img src="<?= base_url(); ?>/img/comment/<?= $comment['image']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
