@@ -5,7 +5,6 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data Tags</h1>
-    <?php d($tags) ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -16,8 +15,8 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>no</th>
-                            <th>tag_name</th>
+                            <th class="text-center" style="width: 10px;">No</th>
+                            <th class="text-center">Tag Name</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -25,7 +24,7 @@
                         <?php $no = 1; ?>
                         <?php foreach ($tags as $tags) : ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $tags['tag_name']; ?></td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
