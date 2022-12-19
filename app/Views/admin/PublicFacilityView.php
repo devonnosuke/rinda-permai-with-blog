@@ -16,10 +16,10 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th class="text-center">No</th>
                             <th>Name</th>
                             <th>Descrition</th>
-                            <th>Icon</th>
+                            <th class="text-center">Icon</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -27,7 +27,7 @@
                         <?php $no = 1; ?>
                         <?php foreach ($PublicFacility as $PublicFacility) : ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $PublicFacility['name']; ?></td>
                                 <td><?= $PublicFacility['description']; ?></td>
                                 <td class="text-center">
