@@ -3,7 +3,7 @@
 
 <main id="main" class="container">
     <section class="intro-single">
-        <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+        <div class="p-4 p-md-5 mb-4 text-bg-dark">
             <div class="col-md-6 px-0">
                 <h1 class="display-4 fst-italic text-light">
                     Title of a longer featured blog post
