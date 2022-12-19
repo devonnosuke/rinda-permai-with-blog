@@ -26,4 +26,14 @@ class PostModel extends Model
         $builder->like('title', $search);
         return $builder->get()->getResultArray();
     }
+
+    public function getPost()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('title, description, content, image, post.id_category, post_tags, post_slug, post_status, post_views, post.id_user, post_last_update, category.category_name, username');
+        $builder->join('category', "category.id_category = $this->table.id_category");
+        $builder->join('user', "user.id_user = $this->table.id_user");
+        return $builder->get()->getResultArray();
+    }
 }

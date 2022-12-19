@@ -15,7 +15,7 @@ class PostController extends BaseController
         if ($search) {
             $data['post'] = $model->searching($search);
         } else {
-            $data['post'] = $model->findAll();
+            $data['post'] = $model->getPost();
         }
 
         return view('admin/PostView', $data);
