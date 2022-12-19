@@ -5,7 +5,7 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data About</h1>
-    <?php d($About) ?>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -16,14 +16,14 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <td>No</td>
-                            <th>title</th>
-                            <th>subtitle</th>
-                            <th>description</th>
-                            <th>visi</th>
-                            <th>misi</th>
-                            <th>img_thumb</th>
-                            <th>img_profile</th>
+                            <th>No</th>
+                            <th>Title</th>
+                            <th>Subtitle</th>
+                            <th>Description</th>
+                            <th>Visi</th>
+                            <th>Misi</th>
+                            <th>Img Thumb</th>
+                            <th>Img Profile</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -31,16 +31,16 @@
                         <?= $no = 1; ?>
                         <?php foreach ($About as $About) : ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $About['title']; ?></td>
                                 <td><?= $About['subtitle']; ?></td>
                                 <td><?= $About['description']; ?></td>
                                 <td><?= $About['visi']; ?></td>
                                 <td><?= $About['misi']; ?></td>
                                 <td>
-                                    <img src="<?php base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                    <img src="<?php base_url(); ?>/img/<?= $About['img_thumb']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
-                                <td><img src="<?php base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" /></td>
+                                <td><img src="<?php base_url(); ?>/img/<?= $About['img_profile']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" /></td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
