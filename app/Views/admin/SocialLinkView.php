@@ -15,72 +15,36 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>type</th>
-                            <th>link</th>
+                            <th style="width: 10px;">No</td>
+                            <th>Type</th>
+                            <th>Link</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Michael Bruce</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>Singapore</td>
-                            <td>29</td>
-                            <td>2011/06/27</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td class="text-center">
-                                <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                            </td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td class="text-center">
-                                <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                    <button class="btn btn-danger ms-2 btn-circle">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <input type="hidden" name="_method" value="DELETE" />
-                                </form>
-                            </td>
-                        </tr>
+                        <?php $no = 1; ?>
+                        <?php foreach ($sociallink as $social) : ?>
+                            <tr>
+                                <td class="text-center"><?= $no++; ?></td>
+
+                                <td><?= $social['type']; ?></td>
+                                <td class="text-center">
+                                    <?= $social['link']; ?>
+
+                                </td>
+                                <td class="text-center">
+                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                        <button class="btn btn-danger ms-2 btn-circle">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <input type="hidden" name="_method" value="DELETE" />
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
