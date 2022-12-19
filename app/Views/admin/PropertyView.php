@@ -16,24 +16,12 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>type_name</th>
+                            <th class="text-center">No</th>
+                            <th>Type Name</th>
                             <th>address</th>
-                            <th>post_number</th>
-                            <th>lt</th>
-                            <th>lb</th>
-                            <th>area</th>
-                            <th>bads</th>
-                            <th>baths</th>
-                            <th>garages</th>
-                            <th>description</th>
-                            <th>aminities</th>
-                            <th>video</th>
-                            <th>img_card</th>
-                            <th>img_card_spec1</th>
-                            <th>img_card_spec2</th>
-                            <th>id_property_spec</th>
-                            <th>id_property_gallery</th>
+                            <th>Post Number</th>
+                            <th>Area</th>
+                            <th>Img Card</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -41,26 +29,12 @@
                         <?php $no = 1; ?>
                         <?php foreach ($property as $property) : ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td>Tiger Nixon</td>
                                 <td><?= $property['address']; ?></td>
                                 <td><?= $property['post_number']; ?></td>
-                                <td><?= $property['lt']; ?></td>
-                                <td><?= $property['lb']; ?></td>
                                 <td><?= $property['area']; ?></td>
-                                <td><?= $property['bads']; ?></td>
-                                <td><?= $property['baths']; ?></td>
-                                <td><?= $property['garages']; ?></td>
-                                <td><?= $property['description']; ?></td>
-                                <td><?= $property['aminities']; ?></td>
-                                <td><?= $property['video']; ?></td>
-
-                                <td class="text-center">
-                                    <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
-                                </td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
+                                <td><?= $property['img_card']; ?></td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
