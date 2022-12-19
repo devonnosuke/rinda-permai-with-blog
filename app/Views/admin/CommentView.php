@@ -1,5 +1,5 @@
 <!-- Begin Page Content -->
-<?= $this->extend('index'); ?>
+<?= $this->extend('tables'); ?>
 <?= $this->section('kontenya'); ?>
 <div class="container-fluid">
 

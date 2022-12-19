@@ -13,7 +13,7 @@ class PublicFacilitySeeder extends Seeder
             $data = [
                 'name'              => "$i-name",
                 'description'       =>  "Lorem ipsum dolor si t amet consectetur adipisicing elit.",
-                'icon'              =>  "$i-icon.png",
+                'icon'              =>  "bi bi-info-circle",
                 'created_at'        =>  date('Y-m-d H:i:s'),
                 'updated_at'        =>  date('Y-m-d H:i:s'),
             ];

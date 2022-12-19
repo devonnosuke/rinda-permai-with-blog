@@ -38,6 +38,6 @@ class SocialLinkMigration extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('socailLink');
+        $this->forge->dropTable('socialLink');
     }
 }

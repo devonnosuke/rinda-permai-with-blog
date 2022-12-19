@@ -13,7 +13,7 @@ class PublicFacilityGallerySeeder extends Seeder
 
             $data = [
                 'id_public_facility'       =>  getRandId('public_facility', 'id_public_facility'),
-                'image'                    =>  "$i-image",
+                'image'                    =>  "coming-soon.jpg",
                 'created_at'               =>  date('Y-m-d H:i:s'),
                 'updated_at'               =>  date('Y-m-d H:i:s'),
             ];
