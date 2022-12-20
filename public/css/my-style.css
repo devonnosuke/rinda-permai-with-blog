@@ -1,0 +1,15 @@
+.icon-data i.bi {
+  font-size: 2.5rem;
+}
+
+th.no-width {
+  width: 10px;
+}
+
+.active {
+  color: #1cc88a;
+}
+
+.no-active {
+  color: #e74a3b;
+}

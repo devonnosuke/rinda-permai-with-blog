@@ -16,9 +16,9 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Category name</th>
-                            <th>Category slug</th>
+                            <th class="text-center no-width">No</th>
+                            <th>Category Name</th>
+                            <th>Category Slug</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -26,7 +26,7 @@
                         <?php $no = 1; ?>
                         <?php foreach ($category as $category) : ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $category['category_name']; ?></td>
                                 <td><?= $category['category_slug']; ?></td>
 

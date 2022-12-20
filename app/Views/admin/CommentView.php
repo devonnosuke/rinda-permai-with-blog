@@ -16,12 +16,12 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Comment Date</th>
+                            <th>Waktu Komentar</th>
                             <th>Email</th>
-                            <th>Message</th>
+                            <th>Pesan</th>
                             <th>Status</th>
                             <th>Post Slug</th>
-                            <th class="text-center">Image</th>
+                            <th class="text-center">Gambar</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -29,9 +29,9 @@
                         <?php $no = 1; ?>
                         <?php foreach ($comment as $comment) : ?>
                             <?php if ($comment['status'] == 0) {
-                                $status =  'tidak aktif';
+                                $status =  '<span class="active">tidak aktif</span>';
                             } else {
-                                $status = 'aktif';
+                                $status = '<span class="no-active">aktif</span>';
                             } ?>
                             <tr>
                                 <td><?= $no++; ?></td>

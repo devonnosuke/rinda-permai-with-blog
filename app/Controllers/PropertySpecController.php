@@ -10,7 +10,7 @@ class PropertySpecController extends BaseController
     public function index()
     {
         $model = new \App\Models\PropertySpecModel();
-        $data['title'] = 'Daftar PropertySpec';
+        $data['title'] = 'Daftar Property Spec';
 
 
         $data['PropertySpec'] = $model->findAll();

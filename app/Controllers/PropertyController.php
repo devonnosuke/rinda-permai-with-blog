@@ -9,7 +9,7 @@ class PropertyController extends BaseController
     public function index()
     {
         $model = new \App\Models\PropertyModel();
-        $data['title'] = 'Daftar [property]';
+        $data['title'] = 'Daftar Property';
 
         $search = $this->request->getVar('search');
         if ($search) {

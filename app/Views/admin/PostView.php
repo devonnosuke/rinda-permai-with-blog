@@ -19,15 +19,15 @@
                         <tr>
                             <th>No</th>
                             <th>Title</th>
-                            <th>Update Terakhir</th>
+                            <th>Tanggal</th>
                             <th>Content</th>
                             <th>Description</th>
                             <th>Image</th>
-                            <th>Category Name</th>
-                            <th>Post Tags</th>
-                            <th>Post Slug</th>
-                            <th>Post Status</th>
-                            <th>Post Views</th>
+                            <th>Category</th>
+                            <th>Tags</th>
+                            <th>Slug</th>
+                            <th>Status</th>
+                            <th>Views</th>
                             <th>Username</th>
                             <th class="text-center">Opsi</th>
                         </tr>
@@ -42,7 +42,7 @@
                                 $post_status = 'aktif';
                             } ?>
                             <tr>
-                                <td><?= $no++; ?></td>
+                                <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $post['title']; ?></td>
                                 <td><?= formatTanggal($post['post_last_update']); ?></td>
                                 <td><?= $post['content']; ?></td>

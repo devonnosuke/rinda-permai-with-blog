@@ -15,7 +15,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width: 10px;">No</th>
+                            <th class="text-center no-width">No</th>
                             <th class="text-center">Tag Name</th>
                             <th class="text-center">Opsi</th>
                         </tr>

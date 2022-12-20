@@ -18,5 +18,5 @@ function getRandId($tableName, $idName)
 function formatTanggal($date)
 {
     // ubha string menjadi format tanggal
-    return date(' D, d F Y', strtotime($date));
+    return date(' D, d M Y. H:i:s e', strtotime($date));
 }

@@ -16,7 +16,7 @@
                     <thead>
                         <tr>
                             <th style="width: 10px;">No</td>
-                            <th>Type</th>
+                            <th>Type Link</th>
                             <th>Link</th>
                             <th class="text-center">Opsi</th>
                         </tr>

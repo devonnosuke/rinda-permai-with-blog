@@ -30,8 +30,8 @@
                                 <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $PublicFacility['name']; ?></td>
                                 <td><?= $PublicFacility['description']; ?></td>
-                                <td class="text-center">
-                                    <img src="<?= base_url(); ?>/img/undraw_profile.svg" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                <td class="text-center icon-data">
+                                    <i class="<?= $PublicFacility['icon']; ?>"></i>
                                 </td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
