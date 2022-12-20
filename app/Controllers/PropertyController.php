@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use Config\Services;
 
 class PropertyController extends BaseController
 {
@@ -19,5 +20,10 @@ class PropertyController extends BaseController
         }
 
         return view('admin/PropertyView', $data);
+    }
+    public function add()
+    {
+        $data['validation'] = Services::validation();
+        return view('admin/add-property', $data);
     }
 }
