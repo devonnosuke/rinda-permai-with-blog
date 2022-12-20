@@ -5,13 +5,15 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data Public Facility</h1>
-    <?php d($PublicFacility); ?>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Public Facility</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar Public Facility</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/public-facility/tambah" class="btn btn-primary mb-4">Tambah Public Facility <i class="bi bi-plus"></i></a>
+
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
