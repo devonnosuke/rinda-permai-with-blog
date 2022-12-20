@@ -5,11 +5,11 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data Property</h1>
-    <?php d($property); ?>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar [property]</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar [property]</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -21,7 +21,7 @@
                             <th>address</th>
                             <th>Post Number</th>
                             <th>Area</th>
-                            <th>Img Card</th>
+                            <th class="text-center">Img Card</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -30,11 +30,13 @@
                         <?php foreach ($property as $property) : ?>
                             <tr>
                                 <td class="text-center"><?= $no++; ?></td>
-                                <td>Tiger Nixon</td>
+                                <td><?= $property['type_name']; ?></td>
                                 <td><?= $property['address']; ?></td>
                                 <td><?= $property['post_number']; ?></td>
                                 <td><?= $property['area']; ?></td>
-                                <td><?= $property['img_card']; ?></td>
+                                <td class="text-center">
+                                    <img src="<?= base_url(); ?>/img/<?= $property['img_card']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                </td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
