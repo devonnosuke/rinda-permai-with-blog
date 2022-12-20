@@ -9,7 +9,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-white">Daftar [property]</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar property</h6>
         </div>
         <div class="card-body">
             <a href="<?= base_url(); ?>/admin/property/add" class="btn btn-primary mb-4">Tambah Property <i class="bi bi-plus"></i></a>
@@ -42,7 +42,7 @@
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/property/delete/<?= $property['id_property']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>

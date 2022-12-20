@@ -23,7 +23,7 @@
 
                 <div class="card bg-light mb-3">
                     <div class="card-body">
-                        <form class="px-2 mb-5 user" action="<?= base_url(); ?>/save" method="POST" enctype="multipart/form-data">
+                        <form class="px-2 mb-5 user" action="<?= base_url(); ?>/admin/property/save" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="name" class="form-label mt-4"> input type name</label>
                                 <input type="text" class="form-control form-control-user <?= ($validation->hasError('type_name')) ? 'is-invalid' : ''; ?>" name="type_name" id="name" placeholder="Contoh input type name..." value="<?= old('type_name'); ?>" />
