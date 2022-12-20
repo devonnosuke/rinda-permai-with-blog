@@ -11,10 +11,10 @@
             <div class="container mt-5 form">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="h3 mb-2 text-gray-800"><i class="bi bi-plus-circle-dotted"></i> Isi data baru [nama tabel] disini:</h1>
+                        <h1 class="h3 mb-2 text-gray-800"><i class="bi bi-plus-circle-dotted"></i> Isi data baru Tags disini:</h1>
                     </div>
                     <div class="col-md-6 text-right">
-                        <a href="/" class="btn btn-primary mb-2 ms-3">
+                        <a href="<?= base_url(); ?>/admin/tags" class="btn btn-primary mb-2 ms-3">
                             < Kembali ke Daftar <i class="bi bi-card-list"></i>
                         </a>
                     </div>

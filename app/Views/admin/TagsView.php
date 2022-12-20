@@ -11,6 +11,7 @@
             <h6 class="m-0 font-weight-bold text-white">Daftar Tags</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/tags/tambah" class="btn btn-primary mb-4">Tambah Tags <i class="bi bi-plus"></i></a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
