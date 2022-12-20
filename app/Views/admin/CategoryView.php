@@ -5,13 +5,13 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data Category</h1>
-    <?php d($category) ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Category</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar Category</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/category/tambah" class="btn btn-primary mb-4">Tambah Category <i class="bi bi-plus"></i></a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
