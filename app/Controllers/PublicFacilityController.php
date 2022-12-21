@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use Config\Services;
+use PhpParser\Node\Stmt\Return_;
 
 class PublicFacilityController extends BaseController
 {
@@ -62,5 +63,28 @@ class PublicFacilityController extends BaseController
         }
 
         return "Gagal Disimpan!";
+    }
+    public function delete($id = null)
+    {
+        $model = new \App\Models\PublicFacilityModel();
+
+        // $namaFoto = $model->find($id);
+        // $namaFoto = $namaFoto['student_pic'];
+
+        $cek = $model->delete($id);
+        if ($cek == true) {
+            // ($namaFoto != 'nopic.png') ? unlink("pic/" . $namaFoto) : '';
+            return redirect()->to('/admin/public-facility');
+        }
+
+        return "Gagal Dihapus!";
+    }
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Public Facility';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\PublicFacilityModel();
+        $data['public_facility'] = $model->find($id);
+        return view('/admin/public-facility-edit', $data);
     }
 }

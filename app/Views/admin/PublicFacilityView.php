@@ -20,9 +20,9 @@
                         <tr>
                             <th class="text-center">No</th>
                             <th>Name</th>
-                            <th>Descrition</th>
+                            <th>Description</th>
                             <th class="text-center">Icon</th>
-                            <th class="text-center">Opsi</th>
+                            <th style="width: 70px;" class="text-center">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,10 +36,10 @@
                                     <i class="<?= $PublicFacility['icon']; ?>"></i>
                                 </td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/public-facility/edit/<?= $PublicFacility['id_public_facility']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/public-facility/delete/<?= $PublicFacility['id_public_facility']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>

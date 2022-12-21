@@ -9,6 +9,10 @@ class Home extends BaseController
     public function index()
     {
         $data['title'] = 'Home';
+        $model = new \App\Models\PublicFacilityModel();
+
+        $data['facility'] = $model->findAll();
+
         return view('home/home', $data);
     }
 
