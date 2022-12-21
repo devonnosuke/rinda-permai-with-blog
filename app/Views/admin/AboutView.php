@@ -9,9 +9,10 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar About</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar About</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/about/tambah" class="btn btn-primary mb-4">Tambah About <i class="bi bi-plus"></i></a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -45,7 +46,7 @@
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/about/delete/<?= $About['id_about']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>
