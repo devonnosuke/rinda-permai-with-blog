@@ -31,7 +31,7 @@
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/tags/delete/<?= $tags['id_tag']; ?>/" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>

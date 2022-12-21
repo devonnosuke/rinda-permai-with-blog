@@ -45,4 +45,15 @@ class TagsController extends BaseController
 
         return "Gagal Disimpan!";
     }
+
+    public function delete($id = null)
+    {
+        $model = new \App\Models\TagsModel();
+
+        $cek = $model->delete($id);
+        if ($cek == true) {
+            return redirect()->to('/admin/tags');
+        }
+        return "Gagal Dihapus!";
+    }
 }
