@@ -24,6 +24,7 @@
                 <div class="card bg-light mb-3">
                     <div class="card-body">
                         <form class="px-2 mb-5 user" action="<?= base_url(); ?>/admin/public-facility/save" method="POST" enctype="multipart/form-data">
+                            <?= csrf_field(); ?>
                             <div class="form-group">
                                 <label for="name" class="form-label mt-4">Masukkan nama baru</label>
                                 <input type="text" class="form-control form-control-user <?= ($validation->hasError('name')) ? 'is-invalid' : ''; ?>" name="name" id="name" placeholder="masukkan nama disini..." value="<?= old('name'); ?>" />
@@ -38,6 +39,11 @@
                                 <label for="name" class="form-label mt-4">Masukkan Icon</label>
                                 <input type="text" class="form-control form-control-user <?= ($validation->hasError('icon')) ? 'is-invalid' : ''; ?>" name="icon" id="name" placeholder="masukkan icon disini..." value="<?= old('icon'); ?>" />
                                 <div class="invalid-feedback"><?= $validation->getError('icon'); ?></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Input your photos!</label>
+                                <input class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" type="file" id="formFile" name="image[]" multiple />
+                                <div class="invalid-feedback"><?= $validation->getError('image'); ?></div>
                             </div>
                             <button class="btn btn-primary float-right" type="submit"><i class="bi bi-save me-2"></i> simpan</button>
                         </form>

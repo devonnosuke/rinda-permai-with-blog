@@ -20,3 +20,18 @@ function formatTanggal($date)
     // ubha string menjadi format tanggal
     return date(' D, d M Y. H:i:s e', strtotime($date));
 }
+
+function getLastId()
+{
+    $db      = \Config\Database::connect();
+    return $db->insertID();
+}
+
+function getAllById($namatabel, $namaKolom, $id)
+{
+    $db      = \Config\Database::connect();
+    $builder = $db->table($namatabel);
+    $builder->select('*');
+    $builder->where($namaKolom, $id);
+    return $builder->get()->getResultArray();
+}

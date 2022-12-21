@@ -33,12 +33,31 @@ class PublicFacilityController extends BaseController
     {
         $model = new \App\Models\PublicFacilityModel();
         $data = $this->request->getVar();
+
+        $imagefile = $this->request->getFiles();
+
         if ($id == true) {
             $data['id_public_facility'] = $id;
         }
         $cek = $model->save($data);
 
+        $id_public_facility = getLastId();
         if ($cek == true) {
+            if ($imagefile) {
+                foreach ($imagefile['image'] as $img) {
+                    if ($img->isValid() && !$img->hasMoved()) {
+
+                        $newName = $img->getRandomName();
+                        $img->move('img/public_facility_gallery', $newName);
+
+                        $dataGallery['id_public_facility'] = $id_public_facility;
+                        $dataGallery['image'] = $newName;
+
+                        $modelPFG = new \App\Models\PublicFacilityGalleryModel();
+                        $modelPFG->save($dataGallery);
+                    }
+                }
+            }
             return redirect()->to('/admin/public-facility');
         }
 

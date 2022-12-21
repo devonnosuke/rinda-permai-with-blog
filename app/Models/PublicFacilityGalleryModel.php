@@ -10,7 +10,7 @@ class PublicFacilityGalleryModel extends Model
     protected $primaryKey       = 'id_public_facility_Gallery';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $allowedFields    = ['image',];
+    protected $allowedFields    = ['id_public_facility', 'image',];
 
     // Dates
     protected $useTimestamps = true;
