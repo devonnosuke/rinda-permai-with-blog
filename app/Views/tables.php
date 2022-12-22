@@ -65,7 +65,12 @@
                 Interface
             </div>
 
-
+            <!-- Nav Item - Charts -->
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/property">
+                    <i class="bi bi-houses-fill"></i>
+                    <span>Property</span></a>
+            </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
