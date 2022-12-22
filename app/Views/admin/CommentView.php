@@ -45,7 +45,7 @@
                                     <img src="<?= base_url(); ?>/img/comment/<?= $comment['image']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/comment/edit/<?= $comment['id_comment']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form action="<?= base_url(); ?>/admin/comment/delete/<?= $comment['id_comment']; ?>" method="post" style="display: inline">

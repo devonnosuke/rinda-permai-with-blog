@@ -66,17 +66,31 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/property">
                     <i class="bi bi-houses-fill"></i>
                     <span>Property</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/public-facility">
                     <i class="bi bi-people-fill"></i>
                     <span>Public Facility</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item  <?= ($title == 'Daftar Tags📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/tags">
+                    <i class="bi bi-bookmark-fill"></i>
+                    <span>Tags</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item <?= ($title == 'Daftar Comment📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/comment">
+                    <i class="bi bi-chat-left-text-fill"></i>
+                    <span>Comment</span></a>
             </li>
 
             <!-- Nav Item - Tables -->

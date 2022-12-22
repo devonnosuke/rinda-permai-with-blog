@@ -58,4 +58,13 @@ class CommentController extends BaseController
         }
         return "Gagal Dihapus!";
     }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Comment';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\CommentModel();
+        $data['comment'] = $model->find($id);
+        return view('/admin/comment-edit', $data);
+    }
 }
