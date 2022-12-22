@@ -39,7 +39,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url(); ?>">
                 <div class="sidebar-brand-icon">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
                     <img src="<?= base_url(); ?>/img/logo-baru.png" alt="">
@@ -65,7 +65,12 @@
                 Interface
             </div>
 
-
+            <!-- Nav Item - Charts -->
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/property">
+                    <i class="bi bi-houses-fill"></i>
+                    <span>Property</span></a>
+            </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item active">

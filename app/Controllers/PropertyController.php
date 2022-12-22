@@ -60,4 +60,12 @@ class PropertyController extends BaseController
 
         return "Gagal Dihapus!";
     }
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Property';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\PropertyModel();
+        $data['property'] = $model->find($id);
+        return view('/admin/edit-property', $data);
+    }
 }

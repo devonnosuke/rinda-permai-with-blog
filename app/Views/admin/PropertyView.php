@@ -39,7 +39,7 @@
                                     <img src="<?= base_url(); ?>/img/<?= $property['img_card']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/property/edit/<?= $property['id_property']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form action="<?= base_url(); ?>/admin/property/delete/<?= $property['id_property']; ?>" method="post" style="display: inline">

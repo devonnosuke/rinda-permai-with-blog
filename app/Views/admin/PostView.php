@@ -5,13 +5,13 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Data Post</h1>
-    <?php d($post) ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Post</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar Post</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/post/tambah" class="btn btn-primary mb-4">Tambah Post <i class="bi bi-plus"></i></a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -48,7 +48,7 @@
                                 <td><?= $post['content']; ?></td>
                                 <td><?= $post['description']; ?></td>
                                 <td class="text-center">
-                                    <img src="<?= base_url(); ?>/img/<?= $post['image']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                    <img src="<?= base_url(); ?>/img/post/<?= $post['image']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
                                 <td><?= $post['category_name']; ?></td>
                                 <td><?= $post['post_tags']; ?></td>
@@ -60,7 +60,7 @@
                                     <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/post/delete/<?= $post['id_post']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>
