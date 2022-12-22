@@ -28,7 +28,7 @@
                                 <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $tags['tag_name']; ?></td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/tags/edit/<?= $tags['id_tag']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form action="<?= base_url(); ?>/admin/tags/delete/<?= $tags['id_tag']; ?>/" method="post" style="display: inline">

@@ -40,7 +40,7 @@ class TagsController extends BaseController
         $cek = $model->save($data);
 
         if ($cek == true) {
-            return redirect()->to('/');
+            return redirect()->to('/admin/tags');
         }
 
         return "Gagal Disimpan!";
@@ -55,5 +55,14 @@ class TagsController extends BaseController
             return redirect()->to('/admin/tags');
         }
         return "Gagal Dihapus!";
+    }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Tags';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\TagsModel();
+        $data['tags'] = $model->find($id);
+        return view('/admin/tags-edit', $data);
     }
 }
