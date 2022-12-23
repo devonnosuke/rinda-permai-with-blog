@@ -16,22 +16,22 @@
         </div>
         <div class="card-body">
             <form action="" method="POST">
-                <?php if (session()->getFlashdata('error')) { ?>
+                <?php if (session()->getFlashdata('info')) { ?>
                     <div class="alert alert-danger">
-                        <?php echo session()->getFlashdata('error') ?>
+                        <?php echo session()->getFlashdata('info') ?>
                     </div>
                 <?php } ?>
                 <div class="mb-3">
                     <label for="inputUsername" class="form-label ">
                         Username
                     </label>
-                    <input type="text" name="member_username" class="form-control" value="<?php echo session()->getFlashdata('member_username') ?>" id="inputUsername" placeholder="Masukan Username">
+                    <input type="text" name="username" class="form-control" value="<?php echo session()->getFlashdata('username') ?>" id="inputUsername" placeholder="Masukan Username">
                 </div>
                 <div class="mb-3">
                     <label for="inputPassword" class="form-label ">
                         Password
                     </label>
-                    <input type="password" name="member_password" class="form-control" id="inputPassword" placeholder="Masukan Password....">
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Masukan Password....">
                 </div>
                 <div class="mb-3">
                     <input type="submit" name="login" class="btn btn-primary" value="LOGIN">

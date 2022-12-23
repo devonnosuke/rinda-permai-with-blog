@@ -27,7 +27,7 @@ class UserTamuFilter implements FilterInterface
     {
         // Do something here
         if (session()->get('id_user')) {
-            return redirect()->to('/user');
+            return redirect()->to('/admin/property');
         }
     }
 
