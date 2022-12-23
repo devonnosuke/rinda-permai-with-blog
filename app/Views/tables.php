@@ -66,14 +66,14 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item ">
+            <li class="nav-item  <?= ($title == 'Daftar Property') ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/property">
                     <i class="bi bi-houses-fill"></i>
                     <span>Property</span></a>
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item ">
+            <li class="nav-item <?= ($title == 'Daftar Public Facility') ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/public-facility">
                     <i class="bi bi-people-fill"></i>
                     <span>Public Facility</span></a>
