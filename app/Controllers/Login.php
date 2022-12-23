@@ -18,7 +18,7 @@ class Login extends BaseController
             if ($username == '' or $password == '') {
                 $err = "silahkan masukan username dan password";
                 session()->setFlashdata('info', 'silahkan masukan username dan password');
-                redirect()->to('/login');
+                return redirect()->to('/login');
             }
             if (empty($err)) {
                 $dataMember = $UserModel->where('username', $username)->first();
@@ -49,6 +49,6 @@ class Login extends BaseController
                 return redirect()->to("login");
             }
         }
-        return view('Login_View');
+        return view('login');
     }
 }

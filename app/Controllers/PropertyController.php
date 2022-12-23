@@ -25,6 +25,8 @@ class PropertyController extends BaseController
     public function add()
     {
         $data['validation'] = Services::validation();
+        $data['title'] = 'Daftar Property';
+
         return view('admin/add-property', $data);
     }
 
