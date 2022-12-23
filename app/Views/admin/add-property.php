@@ -66,7 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="garages" class="form-label mt-4"> Garages </label>
-                                <input type="number" class="form-control form-control-user <?= ($validation->hasError('garages')) ? 'is-invalid' : ''; ?>" id="garages" placeholder="Contoh input Garages..." name="garages" />
+                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('garages')) ? 'is-invalid' : ''; ?>" id="garages" placeholder="Contoh input Garages..." name="garages" />
                                 <div class="invalid-feedback"><?= $validation->getError('garages'); ?></div>
                             </div>
                             <div class="form-group">

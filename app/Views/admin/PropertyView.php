@@ -21,8 +21,18 @@
                             <th>Type Name</th>
                             <th>address</th>
                             <th>Post Number</th>
+                            <th>lt</th>
+                            <th>lb</th>
                             <th>Area</th>
-                            <th class="text-center">Img Card</th>
+                            <th>bads</th>
+                            <th>baths</th>
+                            <th>garages</th>
+                            <th>description</th>
+                            <th>aminities</th>
+                            <th>video</th>
+                            <th class="text-center">Img_Card</th>
+                            <th>img_spec1</th>
+                            <th>img_spec2</th>
                             <th class="text-center">Opsi</th>
                         </tr>
                     </thead>
@@ -34,10 +44,25 @@
                                 <td><?= $property['type_name']; ?></td>
                                 <td><?= $property['address']; ?></td>
                                 <td><?= $property['post_number']; ?></td>
+                                <td><?= $property['lt']; ?></td>
+                                <td><?= $property['lb']; ?></td>
                                 <td><?= $property['area']; ?></td>
+                                <td><?= $property['bads']; ?></td>
+                                <td><?= $property['baths']; ?></td>
+                                <td><?= $property['garages']; ?></td>
+                                <td><?= $property['description']; ?></td>
+                                <td><?= $property['aminities']; ?></td>
+                                <td><?= $property['video']; ?></td>
                                 <td class="text-center">
-                                    <img src="<?= base_url(); ?>/img/<?= $property['img_card']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                    <img src="<?= base_url(); ?>/img/property/<?= $property['img_card']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
+                                <td>
+                                    <img src="<?= base_url(); ?>/img/property/<?= $property['img_spec1']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                </td>
+                                <td>
+                                    <img src="<?= base_url(); ?>/img/property/<?= $property['img_spec2']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
+                                </td>
+
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>/admin/property/edit/<?= $property['id_property']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>

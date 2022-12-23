@@ -10,7 +10,7 @@ class PropertyModel extends Model
     protected $primaryKey       = 'id_property';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $allowedFields    = ['type_name', 'address', 'post_number', 'lt', 'lb', 'area', 'bads', 'baths', 'garages,', 'description', 'aminities', 'video', 'img_card', 'img_card_spec1', 'img_card_spec2', 'id_property_spec', 'id_property_gallery'];
+    protected $allowedFields    = ['type_name', 'address', 'post_number', 'lt', 'lb', 'area', 'bads', 'baths', 'garages', 'description', 'aminities', 'video', 'img_card', 'img_spec1', 'img_spec2'];
 
     // Dates
     protected $useTimestamps = true;
