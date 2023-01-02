@@ -94,17 +94,24 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item <?= ($title == 'Daftar Category📃') ? 'active' : ''; ?>">
+            <li class="nav-item <?= ($title == 'Daftar Category') ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/category">
                     <i class="bi bi-card-checklist"></i>
                     <span>Category</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item <?= ($title == 'Social Link📃') ? 'active' : ''; ?>">
+            <li class="nav-item <?= ($title == 'Social Link') ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/sociallink">
                     <i class="bi bi-share-fill"></i>
                     <span>Social Link</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Daftar Post') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/post">
+                    <i class="bi bi-file-post"></i>
+                    <span>Postingan</span></a>
             </li>
 
             <!-- Divider -->

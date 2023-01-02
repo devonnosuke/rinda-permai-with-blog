@@ -10,7 +10,7 @@ class CategoryController extends BaseController
     public function index()
     {
         $model = new \App\Models\CategoryModel();
-        $data['title'] = ' Daftar Category';
+        $data['title'] = 'Daftar Category';
 
         $search = $this->request->getVar('search');
         if ($search) {

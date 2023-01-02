@@ -10,7 +10,7 @@ class SocialLinkController extends BaseController
     public function index()
     {
         $model = new \App\Models\SocialLinkModel();
-        $data['title'] = ' Daftar SocialLink';
+        $data['title'] = 'Social Link';
 
         $search = $this->request->getVar('search');
         if ($search) {

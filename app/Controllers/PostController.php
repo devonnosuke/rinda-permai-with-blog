@@ -48,6 +48,7 @@ class PostController extends BaseController
         }
 
         $data['post_slug'] = url_title($this->request->getVar('title'), '-', true);
+        //dd($data);
         $cek = $model->save($data);
 
         if ($cek == true) {
@@ -70,5 +71,14 @@ class PostController extends BaseController
             return redirect()->to('/admin/post');
         }
         return "Gagal Dihapus!";
+    }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Post';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\PostModel();
+        $data['post'] = $model->editPost($id);
+        return view('/admin/post-edit', $data);
     }
 }

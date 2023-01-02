@@ -57,7 +57,7 @@
                                 <td><?= $post['post_views']; ?></td>
                                 <td><?= $post['username']; ?></td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/post/edit/<?= $post['id_post']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <form action="<?= base_url(); ?>/admin/post/delete/<?= $post['id_post']; ?>" method="post" style="display: inline">
