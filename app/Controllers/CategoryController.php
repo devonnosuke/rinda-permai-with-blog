@@ -43,4 +43,24 @@ class CategoryController extends BaseController
 
         return "Gagal Disimpan!";
     }
+
+    public function delete($id = null)
+    {
+        $model = new \App\Models\CategoryModel();
+
+        $cek = $model->delete($id);
+        if ($cek == true) {
+            return redirect()->to('/admin/category');
+        }
+        return "Gagal Dihapus!";
+    }
+
+    public function edit($id)
+    {
+        $data['title'] = 'Edit Category';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\CategoryModel();
+        $data['category'] = $model->find($id);
+        return view('/admin/category-edit', $data);
+    }
 }

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template -->
     <link href="<?= base_url(); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -94,10 +94,17 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+            <li class="nav-item <?= ($title == 'Daftar Category📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/category">
+                    <i class="bi bi-card-checklist"></i>
+                    <span>Category</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Social Link📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/sociallink">
+                    <i class="bi bi-share-fill"></i>
+                    <span>Social Link</span></a>
             </li>
 
             <!-- Divider -->

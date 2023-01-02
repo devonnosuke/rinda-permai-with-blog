@@ -31,10 +31,10 @@
                                 <td><?= $category['category_slug']; ?></td>
 
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/category/edit/<?= $category['id_category']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/category/delete/<?= $category['id_category']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>

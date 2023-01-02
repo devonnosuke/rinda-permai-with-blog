@@ -8,9 +8,10 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Social Link</h6>
+            <h6 class="m-0 font-weight-bold text-white">Daftar Social Link</h6>
         </div>
         <div class="card-body">
+            <a href="<?= base_url(); ?>/admin/sociallink/tambah" class="btn btn-primary mb-4">Tambah Social Link<i class="bi bi-plus"></i></a>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -33,10 +34,10 @@
 
                                 </td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/sociallink/edit/<?= $social['id_socialLink']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
+                                    <form action="<?= base_url(); ?>/admin/sociallink/delete/<?= $social['id_socialLink']; ?>" method="post" style="display: inline">
                                         <button class="btn btn-danger ms-2 btn-circle">
                                             <i class="fas fa-trash"></i>
                                         </button>
