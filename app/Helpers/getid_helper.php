@@ -35,3 +35,15 @@ function getAllById($namatabel, $namaKolom, $id)
     $builder->where($namaKolom, $id);
     return $builder->get()->getResultArray();
 }
+
+function getInisial($initial)
+{
+    $initial = explode(' ', $initial);
+    $theInitial = substr($initial[0], 0, 1);
+
+    if (isset($initial[1])) {
+        $theInitial .= substr($initial[1], 0, 1);
+    }
+
+    return $theInitial;
+}

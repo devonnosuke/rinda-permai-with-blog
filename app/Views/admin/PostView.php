@@ -27,7 +27,7 @@
                             <th>Tags</th>
                             <th>Slug</th>
                             <th>Status</th>
-                            <th>Views</th>
+                            <!-- <th>Views</th> -->
                             <th>Username</th>
                             <th class="text-center">Opsi</th>
                         </tr>
@@ -45,8 +45,8 @@
                                 <td class="text-center"><?= $no++; ?></td>
                                 <td><?= $post['title']; ?></td>
                                 <td><?= formatTanggal($post['post_last_update']); ?></td>
-                                <td><?= $post['content']; ?></td>
-                                <td><?= $post['description']; ?></td>
+                                <td><?= substr($post['content'], 0, 40); ?>...</td>
+                                <td><?= substr($post['description'], 0, 40); ?>...</td>
                                 <td class="text-center">
                                     <img src="<?= base_url(); ?>/img/post/<?= $post['image']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>
@@ -54,7 +54,7 @@
                                 <td><?= $post['post_tags']; ?></td>
                                 <td><?= $post['post_slug']; ?></td>
                                 <td><?= $post_status; ?></td>
-                                <td><?= $post['post_views']; ?></td>
+                                <!-- <td><?= $post['post_views']; ?></td> -->
                                 <td><?= $post['username']; ?></td>
                                 <td class="text-center">
                                     <a href="<?= base_url(); ?>/admin/post/edit/<?= $post['id_post']; ?>" class="btn btn-warning btn-circle me-2">

@@ -37,44 +37,50 @@
                             </div>
                             <div class="form-group">
                                 <label for="content" class="form-label mt-4">Masukkan Content</label>
-                                <textarea class="form-control form-control-user <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" name="content" id="content" placeholder="masukkan content disini..."><?= old('content'); ?></textarea>
+                                <textarea class="form-control <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" name="content" id="content" placeholder="masukkan content disini..." rows="20"><?= old('content'); ?></textarea>
                                 <div class="invalid-feedback"><?= $validation->getError('content'); ?></div>
                             </div>
                             <div class="form-group">
-                                <label for="formFile" class="form-label mt-4">Input your photos!</label>
+                                <label for="formFile" class="form-label mt-4">Pilih Foto Postingan</label>
                                 <input class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" type="file" id="formFile" name="image" multiple />
                                 <div class="invalid-feedback"><?= $validation->getError('image'); ?></div>
                             </div>
                             <div class="form-group">
-                                <label for="category" class="form-label mt-4">Masukkan Category</label>
-                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('category')) ? 'is-invalid' : ''; ?>" name="id_category" id="category" placeholder="masukkan category disini..." value="<?= old('category'); ?>" />
-                                <div class="invalid-feedback"><?= $validation->getError('category'); ?></div>
+                                <label for="category">Pilih Category</label>
+                                <select class="form-control form-control-sm" id="category" name="id_category">
+                                    <option>Pilih Salah satu</option>
+                                    <?php foreach ($category as $cat) : ?>
+                                        <option value="<?= $cat['id_category']; ?>"><?= $cat['category_name']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="tags" class="form-label mt-4">Masukkan Tags</label>
-                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('tags')) ? 'is-invalid' : ''; ?>" name="post_tags" id="tags" placeholder="masukkan tags disini..." value="<?= old('tags'); ?>" />
-                                <div class="invalid-feedback"><?= $validation->getError('tags'); ?></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="username" class="form-label mt-4">Masukkan Username</label>
-                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" name="id_user" id="username" placeholder="masukkan username disini..." value="<?= old('username'); ?>" />
-                                <div class="invalid-feedback"><?= $validation->getError('username'); ?></div>
-                            </div>
+                            <fieldset class="form-group">
+                                <legend class="mt-2">Pilih Tag</legend>
+                                <!-- <label  style="display: block;">Pilih Tag</label> -->
+                                <?php foreach ($tags as $tag) : ?>
+                                    <div class="form-check mr-4" style="display: inline-block">
+                                        <input class="form-check-input" type="checkbox" id="male-<?= $tag['id_tag']; ?>" name="post_tags[]" value="<?= $tag['tag_name']; ?>" />
+                                        <label class="form-check-label" for="male-<?= $tag['id_tag']; ?>">
+                                            <?= $tag['tag_name'] ?>
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
+                            </fieldset>
                             <fieldset class="form-group">
                                 <legend class="mt-4">Status</legend>
                                 <div class="form-check" style="display: inline-block">
-                                    <input class="form-check-input" type="radio" id="male" name="status" value="1" />
+                                    <input class="form-check-input" type="radio" id="male" name="post_status" value="1" />
                                     <label class="form-check-label" for="male">
                                         Aktif <i class="bi bi-check"></i>
                                     </label>
                                 </div>
                                 <div class="form-check ml-4" style="display: inline-block">
-                                    <input class="form-check-input" type="radio" id="female" name="status" value="0" />
+                                    <input class="form-check-input" type="radio" id="female" name="post_status" value="0" />
                                     <label class="form-check-label" for="female">
                                         Tidak Aktif <i class="bi bi-x"></i>
                                     </label>
                                 </div>
-                                <?php if ($error = $validation->getError('status')) {
+                                <?php if ($error = $validation->getError('post_status')) {
                                     echo "<div style='color:#dc3545'>$error</div>";
                                 } ?>
                             </fieldset>

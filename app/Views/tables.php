@@ -48,21 +48,11 @@
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Menu Utama
             </div>
 
             <!-- Nav Item - Charts -->
@@ -79,6 +69,30 @@
                     <span>Public Facility</span></a>
             </li>
 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Social Link') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/sociallink">
+                    <i class="bi bi-share-fill"></i>
+                    <span>Social Link</span></a>
+            </li>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Menu Blog
+            </div>
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Daftar Post') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/post">
+                    <i class="bi bi-file-post"></i>
+                    <span>Postingan</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Daftar Category') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/category">
+                    <i class="bi bi-card-checklist"></i>
+                    <span>Category</span></a>
+            </li>
+
             <!-- Nav Item - Charts -->
             <li class="nav-item  <?= ($title == 'Daftar Tags📃') ? 'active' : ''; ?>">
                 <a class="nav-link" href="<?= base_url(); ?>/admin/tags">
@@ -93,26 +107,6 @@
                     <span>Comment</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item <?= ($title == 'Daftar Category') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?= base_url(); ?>/admin/category">
-                    <i class="bi bi-card-checklist"></i>
-                    <span>Category</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item <?= ($title == 'Social Link') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?= base_url(); ?>/admin/sociallink">
-                    <i class="bi bi-share-fill"></i>
-                    <span>Social Link</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item <?= ($title == 'Daftar Post') ? 'active' : ''; ?>">
-                <a class="nav-link" href="<?= base_url(); ?>/admin/post">
-                    <i class="bi bi-file-post"></i>
-                    <span>Postingan</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

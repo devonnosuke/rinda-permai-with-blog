@@ -40,7 +40,6 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/add', 'Home::add');
 $routes->get('/about', 'Home::about');
-$routes->get('/blog', 'Home::blog');
 $routes->get('/admin', 'Admin::dashboard');
 //routes login
 $routes->get('/', 'Home::index');
@@ -48,6 +47,12 @@ $routes->post('/login', 'Login::index');
 $routes->get('/user', 'User::index', ['filter' => 'UserMemberFilter']);
 $routes->get('/login', 'Login::index', ['filter' => 'UserTamuFilter']);
 $routes->get('/user/logout', 'User::logout');
+// routes BLog
+$routes->get('/blog', 'Home::blog');
+$routes->get('/blog/(:segment)', 'Home::blogDetail/$1');
+$routes->get('/blog/tags/(:segment)', 'Home::tags/$1');
+$routes->get('/blog/category/(:segment)', 'Home::category/$1');
+
 
 tagsRoutes($routes);
 

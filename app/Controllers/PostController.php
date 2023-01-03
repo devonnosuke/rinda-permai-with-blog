@@ -26,6 +26,12 @@ class PostController extends BaseController
     {
         $data['title'] = 'Tambah Post';
         $data['validation'] = Services::validation();
+
+        $categoryModel = new \App\Models\CategoryModel();
+        $tagsModel = new \App\Models\TagsModel();
+        $data['category'] = $categoryModel->findAll();
+        $data['tags'] = $tagsModel->findAll();
+
         return view('admin/post-add', $data);
     }
 
@@ -33,6 +39,16 @@ class PostController extends BaseController
     {
         $model = new \App\Models\PostModel();
         $data = $this->request->getVar();
+        $data['id_user'] = session()->get('id_user');
+        $data['image'] = 'coming-soon.jpg';
+
+        if (!$id) {
+            $data['post_tags'] = null;
+            $tags = $this->request->getVar('post_tags');
+            $data['post_tags'] = implode(',', $tags);
+        }
+
+        // dd($data);
         if ($id == true) {
             $data['id_post'] = $id;
         }
@@ -40,7 +56,7 @@ class PostController extends BaseController
         $pic = $this->request->getFile('image');
 
         if (!$pic->hasMoved() == $pic->isValid()) {
-            ($pictemp && $pictemp != 'coming-soon.png') ? unlink("img/post/" . $pictemp) : '';
+            ($pictemp && $pictemp != 'coming-soon.jpg') ? unlink("img/post/" . $pictemp) : '';
             if (!$pic->move('img/post/')) {
                 return $pic->hasMoved();
             }
@@ -67,7 +83,7 @@ class PostController extends BaseController
 
         $cek = $model->delete($id);
         if ($cek == true) {
-            ($namaFoto != 'coming-soon.png') ? unlink("img/post/" . $namaFoto) : '';
+            ($namaFoto != 'coming-soon.jpg') ? unlink("img/post/" . $namaFoto) : '';
             return redirect()->to('/admin/post');
         }
         return "Gagal Dihapus!";
@@ -77,8 +93,13 @@ class PostController extends BaseController
     {
         $data['title'] = 'Edit Post';
         $data['validation'] = Services::validation();
+
         $model = new \App\Models\PostModel();
+        $categoryModel = new \App\Models\CategoryModel();
+
+
         $data['post'] = $model->editPost($id);
+        $data['category'] = $categoryModel->findAll();
         return view('/admin/post-edit', $data);
     }
 }

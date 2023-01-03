@@ -60,8 +60,8 @@
                 <a class="p-2 link-secondary" href="#">Opinion</a>
                 <a class="p-2 link-secondary" href="#">Science</a>
                 <div class="container-fluid">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" role="search" action="<?= base_url(); ?>/blog" method="get">
+                        <input class="form-control me-2" type="search" name="cari" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Cari</button>
                     </form>
                 </div>

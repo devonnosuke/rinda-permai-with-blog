@@ -37,28 +37,27 @@
                             </div>
                             <div class="form-group">
                                 <label for="content" class="form-label mt-4">Edit Content</label>
-                                <textarea class="form-control form-control-user <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" name="content" id="content" placeholder="Edit content disini..."><?= $post[0]['content']; ?></textarea>
+                                <textarea class="form-control <?= ($validation->hasError('content')) ? 'is-invalid' : ''; ?>" name="content" id="content" placeholder="Edit content disini..." rows="20"><?= $post[0]['content']; ?></textarea>
                                 <div class="invalid-feedback"><?= $validation->getError('content'); ?></div>
                             </div>
                             <div class="form-group">
-                                <label for="formFile" class="form-label mt-4">Input your photos!</label>
+                                <label for="formFile" class="form-label mt-4">Ubah Foto Postingan (isi jika gambar ingin diganti)</label>
                                 <input class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" type="file" id="formFile" name="image" multiple />
                                 <div class="invalid-feedback"><?= $validation->getError('image'); ?></div>
                             </div>
                             <div class="form-group">
-                                <label for="category" class="form-label mt-4">Edit Category</label>
-                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('category')) ? 'is-invalid' : ''; ?>" name="id_category" id="category" placeholder="Edit category disini..." value="<?= $post[0]['category_name']; ?>" />
-                                <div class="invalid-feedback"><?= $validation->getError('category'); ?></div>
+                                <label for="category">Pilih Category</label>
+                                <select class="form-control form-control-sm" id="category" name="id_category">
+                                    <option>Pilih Salah satu</option>
+                                    <?php foreach ($category as $cat) : ?>
+                                        <option value="<?= $cat['id_category']; ?>" <?= ($post[0]['id_category'] == $cat['id_category']) ? 'selected' : ''; ?>><?= $cat['category_name']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="tags" class="form-label mt-4">Edit Tags</label>
+                                <label for="tags" class="form-label mt-4">Edit Tags (setiap tag pisahkan dengan koma)</label>
                                 <input type="text" class="form-control form-control-user <?= ($validation->hasError('tags')) ? 'is-invalid' : ''; ?>" name="post_tags" id="tags" placeholder="Edit tags disini..." value="<?= $post[0]['post_tags']; ?>" />
                                 <div class="invalid-feedback"><?= $validation->getError('tags'); ?></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="username" class="form-label mt-4">Edit Username</label>
-                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>" name="id_user" id="username" placeholder="Edit username disini..." value="<?= $post[0]['username']; ?>" />
-                                <div class="invalid-feedback"><?= $validation->getError('username'); ?></div>
                             </div>
                             <fieldset class="form-group">
                                 <legend class="mt-4">Status</legend>
