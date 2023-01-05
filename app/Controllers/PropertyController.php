@@ -16,7 +16,7 @@ class PropertyController extends BaseController
         if ($search) {
             $data['property'] = $model->searching($search);
         } else {
-            $data['property'] = $model->findAll();
+            $data['property'] = $model->getProperty();
         }
 
         return view('admin/PropertyView', $data);
@@ -87,9 +87,21 @@ class PropertyController extends BaseController
 
         $cek = $model->save($data);
 
+        $dataSpec['specification'] = $this->request->getVar('property_spec');
+
+        if ($id == true) {
+            $dataSpec['id_property'] = getLastId();
+        }
+
+        $model = new \App\Models\PropertySpecModel();
+        // dd($dataSpec);
+        $cek = $model->save($dataSpec);
+
         if ($cek == true) {
             return redirect()->to('/admin/property');
         }
+
+
 
         return "Gagal Disimpan!";
     }
@@ -121,7 +133,7 @@ class PropertyController extends BaseController
         $data['title'] = 'Edit Property';
         $data['validation'] = Services::validation();
         $model = new \App\Models\PropertyModel();
-        $data['property'] = $model->find($id);
+        $data['property'] = $model->findProperty($id);
         return view('/admin/edit-property', $data);
     }
 }

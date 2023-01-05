@@ -80,6 +80,11 @@
                                 <div class="invalid-feedback"><?= $validation->getError('aminities'); ?></div>
                             </div>
                             <div class="form-group">
+                                <label for="aminities" class="form-label mt-4"> Property spec </label>
+                                <input type="text" class="form-control form-control-user <?= ($validation->hasError('property_spec')) ? 'is-invalid' : ''; ?>" id="property_spec" placeholder="pisahkan property spec dengan koma" name="property_spec" />
+                                <div class="invalid-feedback"><?= $validation->getError('property_spec'); ?></div>
+                            </div>
+                            <div class="form-group">
                                 <label for="formFile" class="form-label mt-4">Video!</label>
                                 <input class="form-control <?= ($validation->hasError('video')) ? 'is-invalid' : ''; ?>" type="file" id="formFile" name="video" />
                                 <div class="invalid-feedback"><?= $validation->getError('video'); ?></div>

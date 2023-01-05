@@ -8,7 +8,7 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        // password asli [RiaN2020]
+        // password asli [`RiaN2020`]
         $data = [
             'username'      => "rian-ryaldi",
             'password'      => "21635906b2fa78f4ec7c2d646a443b1f",

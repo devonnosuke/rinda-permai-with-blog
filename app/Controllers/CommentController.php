@@ -41,9 +41,14 @@ class CommentController extends BaseController
         }
         $cek = $model->save($data);
 
+        if ($this->request->getVar('isbloG')) {
+            return redirect()->to('/blog/' . $this->request->getVar('isbloG'));
+        }
+
         if ($cek == true) {
             return redirect()->to('/admin/comment');
         }
+
 
         return "Gagal Disimpan";
     }

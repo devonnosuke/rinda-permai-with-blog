@@ -47,3 +47,15 @@ function getInisial($initial)
 
     return $theInitial;
 }
+
+function getInitialD($initial)
+{
+    $initial = explode('@', $initial);
+    $theInitial = substr($initial[0], 0, 1);
+
+    if (isset($initial[1])) {
+        $theInitial .= substr($initial[1], 0, 1);
+    }
+
+    return strtoupper($theInitial);
+}

@@ -10,7 +10,7 @@ class PropertySpecModel extends Model
     protected $primaryKey       = 'id_property_spec';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
-    protected $allowedFields    = ['specification'];
+    protected $allowedFields    = ['specification', 'id_property'];
 
     // Dates
     protected $useTimestamps = true;

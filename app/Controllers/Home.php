@@ -55,11 +55,14 @@ class Home extends BaseController
         $data['post'] = $model->getBySlug($slug);
         $data['title'] = 'Judul Blog';
 
+
+        $tags = explode(',', $data['post'][0]['post_tags']);
+        $data['tags'] = $tags;
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
-        // $categoryModel = new \App\Models\sociallinkModel();
-        // $data['category'] = $categoryModel->find($slug);
+        $commentModel = new \App\Models\commentModel();
+        $data['comment'] = $commentModel->getCommentbyslug($slug);
 
         return view('home/blog-detail', $data);
     }
@@ -73,12 +76,16 @@ class Home extends BaseController
         return view('form-sample', $data);
     }
 
-    public function tags($slug)
+    public function tags($tags)
     {
         $data['title'] = "Seleksi Kategori";
-        $data['h1'] = "Filter Berdasarkan Tag: $slug";
+        $data['h1'] = "Filter Berdasarkan Tag: $tags";
+
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
+
+        $postmodel = new \App\Models\PostModel();
+        $data['post'] = $postmodel->getByTags($tags);
 
         return view('home/tags-detail', $data);
     }
