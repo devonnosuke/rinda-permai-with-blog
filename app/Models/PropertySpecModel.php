@@ -26,4 +26,13 @@ class PropertySpecModel extends Model
         $builder->like('specification', $search);
         return $builder->get()->getResultArray();
     }
+
+    public function findByIdPro($id)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('*');
+        $builder->where('id_property', $id);
+        return $builder->get()->getResultArray();
+    }
 }

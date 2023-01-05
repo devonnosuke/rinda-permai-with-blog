@@ -52,6 +52,12 @@ $routes->get('/blog', 'Home::blog');
 $routes->get('/blog/(:segment)', 'Home::blogDetail/$1');
 $routes->get('/blog/tags/(:segment)', 'Home::tags/$1');
 $routes->get('/blog/category/(:segment)', 'Home::category/$1');
+//routes property
+$routes->get('/property/grid', 'Home::propertyGrid');
+$routes->get('/property/detail/(:num)', 'Home::propertyDetail/$1');
+
+
+
 
 
 tagsRoutes($routes);

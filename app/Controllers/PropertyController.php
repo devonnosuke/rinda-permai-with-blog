@@ -83,22 +83,20 @@ class PropertyController extends BaseController
             $data['img_spec2'] = $img_spec2->getName();
         }
 
-        // dd($data);
-
         $cek = $model->save($data);
 
-        $dataSpec['specification'] = $this->request->getVar('property_spec');
-
-        if ($id == true) {
-            $dataSpec['id_property'] = getLastId();
-        }
-
-        $model = new \App\Models\PropertySpecModel();
-        // dd($dataSpec);
-        $cek = $model->save($dataSpec);
-
         if ($cek == true) {
-            return redirect()->to('/admin/property');
+
+            $proSpecModel = new \App\Models\PropertySpecModel();
+
+            $dataSpec['specification'] = $this->request->getVar('property_spec');
+            $dataSpec['id_property'] = getLastId();
+
+            $cek = $proSpecModel->save($dataSpec);
+
+            if ($cek == true) {
+                return redirect()->to('/admin/property');
+            }
         }
 
 

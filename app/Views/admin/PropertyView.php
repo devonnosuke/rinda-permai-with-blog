@@ -50,7 +50,7 @@
                                 <td><?= $property['bads']; ?></td>
                                 <td><?= $property['baths']; ?></td>
                                 <td><?= $property['garages']; ?></td>
-                                <td><?= $property['description']; ?></td>
+                                <td><?= substr($property['description'], 0, 40); ?>...</td>
                                 <td><?= $property['aminities']; ?></td>
                                 <td><?= $property['specification']; ?></td>
                                 <td class="text-center">

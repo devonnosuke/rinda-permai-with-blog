@@ -15,6 +15,8 @@ class Home extends BaseController
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
+        $propertymodel = new \App\Models\propertyModel();
+        $data['property'] = $propertymodel->findAll();
         return view('home/home', $data);
     }
 
@@ -98,5 +100,32 @@ class Home extends BaseController
         $data['link'] = $linkmodel->findAll();
 
         return view('home/category-detail', $data);
+    }
+    public function propertyGrid()
+    {
+        $data['title'] = "List Property";
+        $propertymodel = new \App\Models\propertyModel();
+        $data['property'] = $propertymodel->findAll();
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
+        return view('home/propertyGrid', $data);
+    }
+
+    public function propertyDetail($id)
+    {
+        $data['title'] = "Detail Property";
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
+        $specmodel = new \App\Models\PropertySpecModel();
+        $data['spec'] = $specmodel->findByIdPro($id);
+
+        $propertymodel = new \App\Models\propertyModel();
+        $data['property'] = $propertymodel->find($id);
+
+        return view('home/property-single', $data);
     }
 }

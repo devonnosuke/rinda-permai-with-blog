@@ -3,26 +3,28 @@
 <!-- ======= Intro Section ======= -->
 <div class="intro intro-carousel swiper position-relative">
     <div class="swiper-wrapper">
-        <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?= base_url(); ?>/img/rumah1.jpg)">
-            <div class="overlay overlay-a"></div>
-            <div class="intro-content display-table">
-                <div class="table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="intro-body">
-                                    <p class="intro-title-top">
-                                        Tondo, Palu City <br />
-                                        94119
-                                    </p>
-                                    <h1 class="intro-title mb-4">
-                                        <span class="color-b"></span> Type <br />
-                                        Magnolia
-                                    </h1>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">LT 105 | LB 45</span>
+        <?php foreach ($property as $p) : ?>
+            <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?= base_url(); ?>/img/property/<?= $p['img_card'] ?>)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="intro-body">
+                                        <p class="intro-title-top">
+                                            <?= $p['address'] ?> <br />
+                                            <?= $p['post_number'] ?>
+                                        </p>
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b"></span> Type <br />
+                                            <?= $p['type_name'] ?>
+                                        </h1>
+                                    </div>
+                                    <div class="card-body-a">
+                                        <div class="price-box d-flex">
+                                            <span class="price-a">LT <?= $p['lt'] ?> | LB <?= $p['lb'] ?></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -30,63 +32,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?= base_url(); ?>/img/rumah2.jpg)">
-            <div class="overlay overlay-a"></div>
-            <div class="intro-content display-table">
-                <div class="table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="intro-body">
-                                    <p class="intro-title-top">
-                                        Tondo, Palu City <br />
-                                        94119
-                                    </p>
-                                    <h1 class="intro-title mb-4">
-                                        <span class="color-b"></span> Type <br />
-                                        Magnolia
-                                    </h1>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">LT 105 | LB 45</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url(<?= base_url(); ?>/img/rumah3.jpg)">
-            <div class="overlay overlay-a"></div>
-            <div class="intro-content display-table">
-                <div class="table-cell">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="intro-body">
-                                    <p class="intro-title-top">
-                                        Tondo, Palu City <br />
-                                        94119
-                                    </p>
-                                    <h1 class="intro-title mb-4">
-                                        <span class="color-b"></span> Type <br />
-                                        Magnolia
-                                    </h1>
-                                </div>
-                                <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">LT 105 | LB 45</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
+
     </div>
     <div class="swiper-pagination"></div>
 </div>
@@ -225,7 +172,7 @@
                             <h2 class="title-a">Latest Properties</h2>
                         </div>
                         <div class="title-link">
-                            <a href="property-single.html">All Property
+                            <a href="<?= base_url(); ?>/property/grid">All Property
                                 <span class="bi bi-chevron-right"></span>
                             </a>
                         </div>
@@ -235,105 +182,57 @@
 
             <div id="property-carousel" class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="carousel-item-b swiper-slide">
-                        <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
-                                <img src="<?= base_url(); ?>/img/property/IMG-7246.jpg" alt="" class="img-a img-fluid" />
-                            </div>
-                            <div class="card-overlay">
-                                <div class="card-overlay-a-content">
-                                    <div class="card-header-a">
-                                        <h2 class="card-title-a">
-                                            <a href="property-single.html">TYPE<br />
-                                                MAGNOLIA (HOOK)</a>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body-a">
-                                        <div class="price-box d-flex">
-                                            <a href="https://api.whatsapp.com/send?phone=%2B6287888017841&text=Hallo,%20saya telah%20mengunjungi%20rindapermai.com%20dan%20saya%20ingin%20bertanya" target="_blank">
-                                                <span class="price-a">Call Now
-                                                    <i class="bi bi-whatsapp icon-ml"></i> </span></a>
+                    <?php foreach ($property as $p) : ?>
+                        <div class="carousel-item-b swiper-slide">
+                            <div class="card-box-a card-shadow">
+                                <div class="img-box-a">
+                                    <img src="<?= base_url(); ?>/img/property/<?= $p['img_card'] ?>" alt="" class="img-a img-fluid" />
+                                </div>
+                                <div class="card-overlay">
+                                    <div class="card-overlay-a-content">
+                                        <div class="card-header-a">
+                                            <h2 class="card-title-a">
+                                                <a href="property-single.html">TYPE<br />
+                                                    <?= $p['type_name'] ?></a>
+                                            </h2>
                                         </div>
-                                        <a href="property-single.html" class="link-a">Click here to view
-                                            <span class="bi bi-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                    <div class="card-footer-a">
-                                        <ul class="card-info d-flex justify-content-around">
-                                            <li>
-                                                <h4 class="card-info-title">Area</h4>
-                                                <span>142m<sup>2</sup> </span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Beds</h4>
-                                                <span>2</span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Baths</h4>
-                                                <span>1</span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Garages</h4>
-                                                <span>1</span>
-                                            </li>
-                                        </ul>
+                                        <div class="card-body-a">
+                                            <div class="price-box d-flex">
+                                                <a href="https://api.whatsapp.com/send?phone=%2B6287888017841&text=Hallo,%20saya telah%20mengunjungi%20rindapermai.com%20dan%20saya%20ingin%20bertanya" target="_blank">
+                                                    <span class="price-a">Call Now
+                                                        <i class="bi bi-whatsapp icon-ml"></i> </span></a>
+                                            </div>
+                                            <a href="<?= base_url(); ?>/property/detail/<?= $p['id_property'] ?>" class="link-a">Click here to view
+                                                <span class="bi bi-chevron-right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer-a">
+                                            <ul class="card-info d-flex justify-content-around">
+                                                <li>
+                                                    <h4 class="card-info-title">Area</h4>
+                                                    <span><?= $p['area'] ?>m<sup>2</sup> </span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title">Beds</h4>
+                                                    <span><?= $p['bads'] ?></span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title">Baths</h4>
+                                                    <span><?= $p['baths'] ?></span>
+                                                </li>
+                                                <li>
+                                                    <h4 class="card-info-title">Garages</h4>
+                                                    <span><?= $p['garages'] ?></span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                     <!-- End carousel item -->
 
-                    <div class="carousel-item-b swiper-slide">
-                        <div class="card-box-a card-shadow">
-                            <div class="img-box-a">
-                                <img src="<?= base_url(); ?>/img/property/IMG-7257.jpg" alt="" class="img-a img-fluid" />
-                            </div>
-                            <div class="card-overlay">
-                                <div class="card-overlay-a-content">
-                                    <div class="card-header-a">
-                                        <h2 class="card-title-a">
-                                            <a href="property-single.html">TYPE<br />
-                                                MAGNOLIA (MID)</a>
-                                        </h2>
-                                    </div>
-                                    <div class="card-body-a">
-                                        <div class="price-box d-flex">
-                                            <a href="https://api.whatsapp.com/send?phone=%2B6287888017841&text=Hallo,%20saya telah%20mengunjungi%20rindapermai.com%20dan%20saya%20ingin%20bertanya" target="_blank">
-                                                <span class="price-a">Call Now
-                                                    <i class="bi bi-whatsapp icon-ml"></i> </span></a>
-                                        </div>
-                                        <a href="property-single.html" class="link-a">Click here to view
-                                            <span class="bi bi-chevron-right"></span>
-                                        </a>
-                                    </div>
-                                    <div class="card-footer-a">
-                                        <ul class="card-info d-flex justify-content-around">
-                                            <li>
-                                                <h4 class="card-info-title">Area</h4>
-                                                <span>105m
-                                                    <sup>2</sup>
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Beds</h4>
-                                                <span>2</span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Baths</h4>
-                                                <span>1</span>
-                                            </li>
-                                            <li>
-                                                <h4 class="card-info-title">Garages</h4>
-                                                <span>1</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End carousel item -->
                 </div>
             </div>
             <div class="propery-carousel-pagination carousel-pagination"></div>
