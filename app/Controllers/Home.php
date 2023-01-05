@@ -24,19 +24,25 @@ class Home extends BaseController
 
     public function blog()
     {
+        $model = new \App\Models\PostModel();
         $data['title'] = 'Blog';
 
         $keyword = $this->request->getVar('cari');
         if ($keyword) {
             $data['title'] = "Pencarian Blog";
             $data['h1'] = "Hasil Pencarian: $keyword";
+            $data['post'] = $model->searching($keyword);
             return view('home/blog-search', $data);
+        } else {
+            $data['post'] = $model->getPost();
         }
         return view('home/blog', $data);
     }
 
     public function blogDetail($slug = null)
     {
+        $model = new \App\Models\PostModel();
+        $data['post'] = $model->getBySlug($slug);
         $data['title'] = 'Judul Blog';
         return view('home/blog-detail', $data);
     }
