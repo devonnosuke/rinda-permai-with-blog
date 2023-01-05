@@ -41,11 +41,7 @@
                                 <input type="text" class="form-control form-control-user <?= ($validation->hasError('icon')) ? 'is-invalid' : ''; ?>" name="icon" id="name" placeholder="masukkan icon disini..." value="<?= $public_facility['icon']; ?>" />
                                 <div class="invalid-feedback"><?= $validation->getError('icon'); ?></div>
                             </div>
-                            <div class="form-group">
-                                <label for="formFile" class="form-label mt-4">Input your photos!</label>
-                                <input class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" type="file" id="formFile" name="image[]" multiple />
-                                <div class="invalid-feedback"><?= $validation->getError('image'); ?></div>
-                            </div>
+
                             <button class="btn btn-primary float-right" type="submit"><i class="bi bi-save me-2"></i> simpan</button>
                         </form>
                     </div>
