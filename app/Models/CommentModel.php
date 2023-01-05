@@ -37,4 +37,14 @@ class CommentModel extends Model
         $builder->join('post', "post.id_post = $this->table.id_post");
         return $builder->get()->getResultArray();
     }
+
+    public function getCommentbyslug($slug)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('id_comment, email, message, status, comment_date, comment_parent, comment.id_post, comment.image, post_slug');
+        $builder->join('post', "post.id_post = $this->table.id_post");
+        $builder->where('post_slug', $slug);
+        return $builder->get()->getResultArray();
+    }
 }

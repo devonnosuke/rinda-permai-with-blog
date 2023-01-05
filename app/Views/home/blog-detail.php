@@ -50,8 +50,9 @@
             <div class="post-meta-section clearfix">
 
                 <div class="float-left font-face1 post-meta-holder nomargin">TAGS &mdash;
-                    <a href="http://localhost/mblog/tag/Psikologi">Psikologi</a> &vert;
-                    <a href="http://localhost/mblog/tag/Motivasi">Motivasi</a> &vert;
+                    <?php foreach ($tags as $t) : ?>
+                        <a href="<?= base_url(); ?>/blog/tags/<?= $t; ?>"><?= $t; ?></a> &vert;
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="float-right">
@@ -64,7 +65,7 @@
             <!--POST COMMENT-->
             <div class="comments-heading text-center mb-30 mt-60">
                 <hgroup>
-                    <h2 class="font-face1 section-heading">1 Comments</h2>
+                    <h2 class="font-face1 section-heading"><?= count($comment); ?> Comments</h2>
 
                 </hgroup>
             </div>
@@ -72,14 +73,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <h5>Comments:</h5>
-                    <div class="card">
-                        <div class="card-body">
-                            <span class="badge me-2" style="border-radius:50px;height:2rem;line-height:1.5rem;background-color:#a05a2c"><?= getInisial('Devon Pradha') ?></span>
-                            <b>devonpradha@gmail.com: </b>
-                            This is some text within a card body.
+                    <?php foreach ($comment as $c) : ?>
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="badge me-2" style="border-radius:50px;height:2rem;line-height:1.5rem;background-color:#a05a2c"><?= getInitialD($c['email']) ?></span>
+                                <b><?= $c['email']; ?> </b>
+                                <?= $c['message']; ?>
+                                <p><b><?= formatTanggal($c['comment_date']); ?></b></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
+
             </div>
 
             <hr />
@@ -92,21 +97,20 @@
                 </hgroup>
             </div>
             <!-- <div class="col-md-7"> -->
-            <form action="<?= base_url(); ?>" method="post" role="form">
+            <form action="<?= base_url(); ?>/admin/comment/save" method="post" role="form">
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
+                    <input type="hidden" name="id_post" value="<?= $post[0]['id_post'] ?>" />
+                    <input type="hidden" name="status" value="1" />
+                    <input type="hidden" name="isbloG" value="<?= $post[0]['post_slug'] ?>" />
+
+                    <div class="col-md-12 mb-3">
                         <div class="form-group">
                             <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <textarea name="comment" class="form-control" name="comment" cols="45" rows="8" placeholder="Comment Here ..." required></textarea>
+                            <textarea name="message" class="form-control" cols="45" rows="8" placeholder="Comment Here ..." required></textarea>
                         </div>
                     </div>
                     <div class="col-md-12 my-3" id="loading" style="display:none;">
