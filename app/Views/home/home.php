@@ -148,10 +148,7 @@
                                 </p>
                             </div>
                             <div class="card-footer-c">
-                                <button class="link-c link-icon fac" id="facility-1">
-                                    See Photos
-                                    <span class="bi bi-image"></span>
-                                </button>
+
                             </div>
                         </div>
                     </div>
