@@ -39,7 +39,7 @@
         <div class="col-lg-12">
           <div id="property-single-carousel" class="swiper">
             <div class="swiper-wrapper" id="property-single-slider">
-              <div class="carousel-item-b swiper-slide" data-src="assets/img/Bag2/sampingrumah.jpg">
+              <div class="carousel-item-b swiper-slide" data-src="git">
                 <img src="assets/img/Bag2/sampingrumah.jpg" alt="" width="100%" />
               </div>
             </div>
