@@ -291,7 +291,8 @@
           </nav>
           <div class="socials-a">
             <ul class="list-inline">
-              <li class="list-inline-item">
+              <?php foreach ($link as $l) : ?>
+                <!-- <li class="list-inline-item">
                 <a href=" https://www.facebook.com/profile.php?id=100067486944729" target="_blank">
                   <i class="bi bi-facebook" aria-hidden="true"></i>
                 </a>
@@ -305,7 +306,13 @@
                 <a href=" https://instagram.com/rinda_permai?igshid=YmMyMTA2M2Y=" target="_blank">
                   <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
-              </li>
+              </li> -->
+                <li class="list-inline-item">
+                  <a href="<?= $l['link']; ?>" target="_blank">
+                    <i class="bi bi-<?= $l['type']; ?>" aria-hidden="true"></i>
+                  </a>
+                </li>
+              <?php endforeach; ?>
             </ul>
           </div>
           <div class="copyright-footer">

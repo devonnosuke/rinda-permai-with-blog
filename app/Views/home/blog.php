@@ -79,7 +79,7 @@
                                         <!-- <h5 class="card-title">Card title</h5> -->
                                         <strong class="d-inline-block mb-2 text-primary"><?= $post['category_name']; ?></strong>
                                         <h3 class="mb-0 card-title"><?= $post['title']; ?></h3>
-                                        <div class="mb-1 text-muted"><?= $post['post_date']; ?></div>
+                                        <div class="mb-1 text-muted"><?= formatTanggal($post['post_date']); ?></div>
                                         <p class="card-text mb-auto">
                                             <?= $post['description']; ?>
                                         </p>

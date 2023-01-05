@@ -10,8 +10,10 @@ class Home extends BaseController
     {
         $data['title'] = 'Home';
         $model = new \App\Models\PublicFacilityModel();
-
         $data['facility'] = $model->findAll();
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
 
         return view('home/home', $data);
     }
@@ -19,6 +21,10 @@ class Home extends BaseController
     public function about()
     {
         $data['title'] = 'About';
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
         return view('home/about', $data);
     }
 
@@ -26,6 +32,10 @@ class Home extends BaseController
     {
         $model = new \App\Models\PostModel();
         $data['title'] = 'Blog';
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
 
         $keyword = $this->request->getVar('cari');
         if ($keyword) {
@@ -44,12 +54,22 @@ class Home extends BaseController
         $model = new \App\Models\PostModel();
         $data['post'] = $model->getBySlug($slug);
         $data['title'] = 'Judul Blog';
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
+        // $categoryModel = new \App\Models\sociallinkModel();
+        // $data['category'] = $categoryModel->find($slug);
+
         return view('home/blog-detail', $data);
     }
 
     public function add()
     {
         $data['validation'] = Services::validation();
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
         return view('form-sample', $data);
     }
 
@@ -57,6 +77,9 @@ class Home extends BaseController
     {
         $data['title'] = "Seleksi Kategori";
         $data['h1'] = "Filter Berdasarkan Tag: $slug";
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
         return view('home/tags-detail', $data);
     }
 
@@ -64,6 +87,9 @@ class Home extends BaseController
     {
         $data['title'] = "Seleksi Kategori";
         $data['h1'] = "Filter Berdasarkan Kategori: $category";
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
         return view('home/category-detail', $data);
     }
 }

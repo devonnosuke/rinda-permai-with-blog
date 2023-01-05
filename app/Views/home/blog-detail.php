@@ -34,6 +34,7 @@
                 <h2 class="blog-post-title mb-1"><?= $post[0]['title']; ?></h2>
                 <p class="blog-post-meta">
                     <?= (formatTanggal($post[0]['post_date'])) ?> <b><a href="#"><?= $post[0]['username']; ?></a></b>
+                    <br>Category : <b><?= $post[0]['category_name']; ?></b>
                 </p>
 
                 <p>
