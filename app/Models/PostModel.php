@@ -74,4 +74,15 @@ class PostModel extends Model
 
         return $builder->get()->getResultArray();
     }
+    public function getByCategory($categorySlug)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('id_post, title, description, content, image, post.id_category, post_tags, post_slug, post_status, post_views, post.id_user, post_date, post_last_update, category.category_name, username');
+        $builder->join('category', "category.id_category = $this->table.id_category");
+        $builder->join('user', "user.id_user = $this->table.id_user");
+        $builder->like('category.category_slug', $categorySlug);
+
+        return $builder->get()->getResultArray();
+    }
 }

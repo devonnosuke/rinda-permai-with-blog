@@ -38,6 +38,9 @@ class Home extends BaseController
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
+        $categorymodel = new \App\Models\CategoryModel();
+        $data['category'] = $categorymodel->findAll();
+
 
         $keyword = $this->request->getVar('cari');
         if ($keyword) {
@@ -66,6 +69,9 @@ class Home extends BaseController
         $commentModel = new \App\Models\commentModel();
         $data['comment'] = $commentModel->getCommentbyslug($slug);
 
+        $categorymodel = new \App\Models\CategoryModel();
+        $data['category'] = $categorymodel->findAll();
+
         return view('home/blog-detail', $data);
     }
 
@@ -80,7 +86,7 @@ class Home extends BaseController
 
     public function tags($tags)
     {
-        $data['title'] = "Seleksi Kategori";
+        $data['title'] = "Seleksi Tag";
         $data['h1'] = "Filter Berdasarkan Tag: $tags";
 
         $linkmodel = new \App\Models\sociallinkModel();
@@ -89,6 +95,9 @@ class Home extends BaseController
         $postmodel = new \App\Models\PostModel();
         $data['post'] = $postmodel->getByTags($tags);
 
+        $categorymodel = new \App\Models\CategoryModel();
+        $data['category'] = $categorymodel->findAll();
+
         return view('home/tags-detail', $data);
     }
 
@@ -96,6 +105,13 @@ class Home extends BaseController
     {
         $data['title'] = "Seleksi Kategori";
         $data['h1'] = "Filter Berdasarkan Kategori: $category";
+
+        $postmodel = new \App\Models\PostModel();
+        $data['post'] = $postmodel->getByCategory($category);
+
+        $categorymodel = new \App\Models\CategoryModel();
+        $data['category'] = $categorymodel->findAll();
+
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 

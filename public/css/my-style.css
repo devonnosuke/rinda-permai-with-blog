@@ -13,3 +13,10 @@ th.no-width {
 .no-active {
   color: #e74a3b;
 }
+
+textarea:focus-visible {
+  border: none !important;
+}
+textarea:active {
+  border: none !important;
+}

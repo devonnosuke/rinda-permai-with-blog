@@ -34,7 +34,7 @@
                     <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Masukan Password....">
                 </div>
                 <div class="mb-3">
-                    <input type="submit" name="login" class="btn btn-primary" value="LOGIN">
+                    <input type="submit" name="login" class="btn" style="background-color: #91662f; border-color: #724f22" value="LOGIN">
                 </div>
             </form>
         </div>

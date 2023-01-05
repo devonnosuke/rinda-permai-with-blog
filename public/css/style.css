@@ -13,6 +13,30 @@ body {
   color: #555555;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #efe4d3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b99052;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #93713f;
+}
+
+textarea:focus {
+  outline: none !important;
+}
+
 /* .img-denah-dalam {
   margin: 0 auto;
   margin-top: -1rem;
