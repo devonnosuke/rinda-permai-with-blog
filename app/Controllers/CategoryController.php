@@ -34,7 +34,7 @@ class CategoryController extends BaseController
         if ($id == true) {
             $data['id_category'] = $id;
         }
-
+        $data['category_slug'] = url_title($this->request->getVar('category_name'), '-', true);
         $cek = $model->save($data);
 
         if ($cek == true) {
