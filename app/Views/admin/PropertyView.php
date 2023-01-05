@@ -29,7 +29,7 @@
                             <th>garages</th>
                             <th>description</th>
                             <th>aminities</th>
-                            <th>video</th>
+                            <th>specification</th>
                             <th class="text-center">Img_Card</th>
                             <th>img_spec1</th>
                             <th>img_spec2</th>
@@ -52,7 +52,7 @@
                                 <td><?= $property['garages']; ?></td>
                                 <td><?= $property['description']; ?></td>
                                 <td><?= $property['aminities']; ?></td>
-                                <td><?= $property['video']; ?></td>
+                                <td><?= $property['specification']; ?></td>
                                 <td class="text-center">
                                     <img src="<?= base_url(); ?>/img/property/<?= $property['img_card']; ?>" alt="" class="img-thumbnail img-fluid" style="width: 150px" />
                                 </td>

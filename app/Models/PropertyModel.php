@@ -27,4 +27,24 @@ class PropertyModel extends Model
         $builder->orLike('address', $search);
         return $builder->get()->getResultArray();
     }
+
+    public function getProperty()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('property.id_property, type_name, address, post_number, lt, lb, area, bads, baths, garages, description, aminities, video, img_card, img_spec1, img_spec2, specification');
+        $builder->join('property_spec', "property_spec.id_property = $this->table.id_property");
+        return $builder->get()->getResultArray();
+    }
+
+    public function findProperty($id)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table($this->table);
+        $builder->select('property.id_property, type_name, address, post_number, lt, lb, area, bads, baths, garages, description, aminities, video, img_card, img_spec1, img_spec2, specification');
+        $builder->join('property_spec', "property_spec.id_property = $this->table.id_property");
+        $builder->where('property.id_property', $id);
+
+        return $builder->get()->getResultArray();
+    }
 }
