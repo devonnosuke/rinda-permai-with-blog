@@ -15,6 +15,9 @@ class Home extends BaseController
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
         $propertymodel = new \App\Models\propertyModel();
         $data['property'] = $propertymodel->findAll();
         return view('home/home', $data);
@@ -26,6 +29,7 @@ class Home extends BaseController
 
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
+
         $contactModel = new \App\Models\contactModel();
         $data['contact'] = $contactModel->findAll();
 
@@ -59,6 +63,9 @@ class Home extends BaseController
         $categorymodel = new \App\Models\CategoryModel();
         $data['category'] = $categorymodel->findAll();
 
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
 
         $keyword = $this->request->getVar('cari');
         if ($keyword) {
@@ -77,6 +84,9 @@ class Home extends BaseController
         $model = new \App\Models\PostModel();
         $data['post'] = $model->getBySlug($slug);
         $data['title'] = 'Judul Blog';
+
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
 
 
         $tags = explode(',', $data['post'][0]['post_tags']);
@@ -99,6 +109,9 @@ class Home extends BaseController
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
         return view('form-sample', $data);
     }
 
@@ -106,6 +119,9 @@ class Home extends BaseController
     {
         $data['title'] = "Seleksi Tag";
         $data['h1'] = "Filter Berdasarkan Tag: $tags";
+
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
 
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
@@ -124,6 +140,10 @@ class Home extends BaseController
         $data['title'] = "Seleksi Kategori";
         $data['h1'] = "Filter Berdasarkan Kategori: $category";
 
+
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
         $postmodel = new \App\Models\PostModel();
         $data['post'] = $postmodel->getByCategory($category);
 
@@ -141,6 +161,9 @@ class Home extends BaseController
         $propertymodel = new \App\Models\propertyModel();
         $data['property'] = $propertymodel->findAll();
 
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
 
@@ -153,6 +176,9 @@ class Home extends BaseController
 
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
+
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
 
         $specmodel = new \App\Models\PropertySpecModel();
         $data['spec'] = $specmodel->findByIdPro($id);
