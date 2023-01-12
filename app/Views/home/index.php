@@ -113,11 +113,11 @@
               <ul class="list-unstyled">
                 <li class="color-a">
                   <span class="color-text-a">Phone .</span>
-                  +6287888017841
+                  <?= $contact[0]['phone']; ?>
                 </li>
                 <li class="color-a">
                   <span class="color-text-a">Email .</span>
-                  admin@rindapermai.com
+                  <?= $contact[0]['email']; ?>
                 </li>
               </ul>
             </div>

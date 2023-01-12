@@ -26,8 +26,26 @@ class Home extends BaseController
 
         $linkmodel = new \App\Models\sociallinkModel();
         $data['link'] = $linkmodel->findAll();
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
+        $aboutModel = new \App\Models\aboutModel();
+        $data['about'] = $aboutModel->findAll();
 
         return view('home/about', $data);
+    }
+
+    public function contact()
+    {
+        $data['title'] = 'Contact';
+
+        $contactModel = new \App\Models\contactModel();
+        $data['contact'] = $contactModel->findAll();
+
+        $linkmodel = new \App\Models\sociallinkModel();
+        $data['link'] = $linkmodel->findAll();
+
+        return view('home/contact', $data);
     }
 
     public function blog()

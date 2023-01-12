@@ -48,4 +48,12 @@ class AboutController extends BaseController
         }
         return "Gagal Dihapus!";
     }
+    public function edit($id)
+    {
+        $data['title'] = 'Edit About';
+        $data['validation'] = Services::validation();
+        $model = new \App\Models\AboutModel();
+        $data['about'] = $model->find($id);
+        return view('/admin/about-edit', $data);
+    }
 }

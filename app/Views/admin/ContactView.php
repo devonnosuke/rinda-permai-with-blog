@@ -33,15 +33,10 @@
                                 <td><?= $contact['name_residence']; ?></td>
                                 <td><?= $contact['address']; ?></td>
                                 <td class="text-center">
-                                    <a href="<?= base_url(); ?>nama_tabel/edit/" class="btn btn-warning btn-circle me-2">
+                                    <a href="<?= base_url(); ?>/admin/contact/edit/<?= $contact['id_contact']; ?>" class="btn btn-warning btn-circle me-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="<?= base_url(); ?>nama_tabel/delete/" method="post" style="display: inline">
-                                        <button class="btn btn-danger ms-2 btn-circle">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                    </form>
+
                                 </td>
                             </tr>
                         <?php endforeach ?>

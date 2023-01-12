@@ -39,11 +39,9 @@
           </div>
           <div class="sinse-box">
             <h3 class="sinse-title">
-              Rinda Permai
-              <br />
-              Since 2009
+              <?= $about[0]['title']; ?>
             </h3>
-            <p>Residence & Property</p>
+            <p><?= $about[0]['subtitle']; ?></p>
           </div>
         </div>
         <div class="col-md-12 section-t8 position-relative">
@@ -60,10 +58,7 @@
                 </h3>
               </div>
               <p class="color-text-a">
-                PT.Baliem Indah Property (BIP),Bergerak dalam bidang konstruksi dan developer yang berkomitmen
-                memberikan mutu kualitas yang diharapkan oleh para penggunanya.tidak hanya itu kami juga
-                mempertimbangkan konstruksi yang suistanable dan bekerja dengan profesional,berintegritas,efektif-efisien,
-                serta memperhatikan standar K3(Keselamatan,Kesehatan pekerja) dan lingkungan kerja.
+                <?= $about[0]['description']; ?>
               </p>
             </div>
           </div>
@@ -87,15 +82,11 @@
       <div class="row">
         <div class="col-md-6">
           <h4>VISI</h4>
-          <p style="font-size: 17px;">Menjadi Partner Developer dan<br /> Konstruksi pilihan untuk<br /> kehidupan yang lebih baik</p>
+          <p style="font-size: 17px;"><?= $about[0]['visi']; ?></p>
         </div>
         <div class="col-md-6">
           <h4>MISI</h4>
-          <ul style="list-style-type:disc; font-size: 17px;">
-            <li>Produk dan servis yang berkualitas</li>
-            <li>Peduli pada Kehidupan berkelanjutan</li>
-            <li>Tata kelola Perusahaan dan Praktik Etika Bisnis</li>
-          </ul>
+          <p style="font-size: 17px;"><?= $about[0]['misi']; ?></p>
         </div>
       </div>
     </div>

@@ -75,6 +75,20 @@
                     <i class="bi bi-share-fill"></i>
                     <span>Social Link</span></a>
             </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Daftar Contact 📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/contact">
+                    <i class="bi bi-telephone"></i>
+                    <span>Contact</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item <?= ($title == 'Daftar About 📃') ? 'active' : ''; ?>">
+                <a class="nav-link" href="<?= base_url(); ?>/admin/about">
+                    <i class="bi bi-info-circle"></i>
+                    <span>About</span></a>
+            </li>
             <!-- Heading -->
             <div class="sidebar-heading">
                 Menu Blog
